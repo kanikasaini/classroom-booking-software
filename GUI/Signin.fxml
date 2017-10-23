@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <BorderPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER">
+         <left>
+            <Label text="   IIIT Delhi" textFill="#3fada8" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Label text="Classroom Booking System   " textFill="#3fada8" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="379.0" prefWidth="359.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <top>
+            <BorderPane prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
+               <top>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="606.0" style="-fx-background-color: #808080;" text="INDRAPRASTHA INSTITUTE OF INFORMATION TECHNOLOGY DELHI" BorderPane.alignment="CENTER">
+                     <textFill>
+                        <LinearGradient endX="0.6586538461538461" endY="1.0">
+                           <stops>
+                              <Stop color="#3fb5af" />
+                              <Stop color="#3fb5af" offset="0.1851851851851852" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </top>
+               <bottom>
+                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="607.0" style="-fx-background-color: #808080;" text="CLASSROOM BOOKING SYSTEM" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </bottom>
+            </BorderPane>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <BorderPane prefHeight="123.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                     <left>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                     </right>
+                     <center>
+                        <BorderPane prefHeight="98.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                           <top>
+                              <TextField maxWidth="-Infinity" prefHeight="6.0" prefWidth="172.0" promptText="Email" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets top="20.0" />
+                                 </BorderPane.margin>
+                              </TextField>
+                           </top>
+                           <bottom>
+                              <Button mnemonicParsing="false" text="Login" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <center>
+                              <PasswordField maxWidth="-Infinity" promptText="Password" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </center>
+                  </BorderPane>
+               </top>
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <left>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                     </right>
+                     <center>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? Signup now!" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets top="50.0" />
+                                 </BorderPane.margin>
+                              </Text>
+                           </top>
+                           <bottom>
+                              <Button mnemonicParsing="false" text="Signup" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                           <center>
+                              <BorderPane prefHeight="108.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <TextField maxWidth="-Infinity" promptText="Email" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets top="10.0" />
+                                       </BorderPane.margin>
+                                    </TextField>
+                                 </top>
+                                 <left>
+                                    <RadioButton maxWidth="-Infinity" mnemonicParsing="false" text="Admin" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets />
+                                       </BorderPane.margin>
+                                    </RadioButton>
+                                 </left>
+                                 <right>
+                                    <RadioButton maxWidth="-Infinity" mnemonicParsing="false" text="Student" BorderPane.alignment="CENTER" />
+                                 </right>
+                                 <center>
+                                    <RadioButton maxWidth="-Infinity" mnemonicParsing="false" text="Faculty" BorderPane.alignment="CENTER" />
+                                 </center>
+                                 <bottom>
+                                    <PasswordField maxWidth="-Infinity" promptText="Passowrd" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets bottom="10.0" />
+                                       </BorderPane.margin>
+                                    </PasswordField>
+                                 </bottom>
+                              </BorderPane>
+                           </center>
+                        </BorderPane>
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

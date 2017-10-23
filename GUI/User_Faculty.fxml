@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home" />
+          <Menu mnemonicParsing="false" text="Available Rooms" />
+          <Menu mnemonicParsing="false" text="Book Room" />
+          <Menu mnemonicParsing="false" text="My Bookings" />
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <BorderPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER">
+         <left>
+            <Label text="   IIIT Delhi" textFill="#3fada8" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Label text="Classroom Booking System   " textFill="#3fada8" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
+         <top>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="600.0" style="-fx-font-weight: bold; -fx-background-color: #808080;" text="127.0.0.1" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <left>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isha Kalra" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets top="20.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </top>
+                           <bottom>
+                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <center>
+                              <ImageView fitHeight="163.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                 <image>
+                                    <Image url="@../../Pictures/thumbsup%20bitmoji.png" />
+                                 </image>
+                              </ImageView>
+                           </center>
+                        </BorderPane>
+                     </left>
+                     <center>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </top>
+                           <center>
+                              <TextArea prefHeight="257.0" prefWidth="328.0" text="Hi!&#10;I'm doing good.&#10;" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>
