@@ -16,4 +16,16 @@ public Admin(String userId,String password,String type)
 	bookings= null;
 	pendingRequests = null;
 }
+public void BookRoom(String roomNumber)
+{
+
+}
+public void cancelBooking(String roomNumber)
+{
+
+}
+public void handleRequest(Request request)
+{
+
+}
 }

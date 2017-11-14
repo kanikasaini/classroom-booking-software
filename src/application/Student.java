@@ -13,9 +13,4 @@ public Student()
 	super();
 }
 
-public Student()
-{
-
-}
-
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <bottom>
       <BorderPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER">
          <left>
@@ -60,14 +60,14 @@
                      <center>
                         <BorderPane prefHeight="98.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                            <top>
-                              <TextField maxWidth="-Infinity" prefHeight="6.0" prefWidth="172.0" promptText="Email" BorderPane.alignment="CENTER">
+                              <TextField fx:id="actiontarget" maxWidth="-Infinity" prefHeight="6.0" prefWidth="172.0" promptText="Email" BorderPane.alignment="CENTER">
                                  <BorderPane.margin>
                                     <Insets top="20.0" />
                                  </BorderPane.margin>
                               </TextField>
                            </top>
                            <bottom>
-                              <Button mnemonicParsing="false" text="Login" BorderPane.alignment="CENTER" />
+                              <Button fx:id="loginbtn" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Login" BorderPane.alignment="CENTER" />
                            </bottom>
                            <center>
                               <PasswordField maxWidth="-Infinity" promptText="Password" BorderPane.alignment="CENTER" />
