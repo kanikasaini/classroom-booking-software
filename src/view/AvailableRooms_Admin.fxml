@@ -11,11 +11,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AvailableRooms_AdminController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home" />
+          <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <CheckMenuItem mnemonicParsing="false" text="Unspecified Action" />
+               </items></Menu>
             <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Available Rooms" />
           <Menu mnemonicParsing="false" text="Book Room" />
           <Menu mnemonicParsing="false" text="My Bookings" />
@@ -51,10 +54,10 @@
                      <center>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <right>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Check Availability" BorderPane.alignment="CENTER" />
+                              <Button fx:id="checkBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Check Availability" BorderPane.alignment="CENTER" />
                            </right>
                            <center>
-                              <TextField promptText="Enter Room No." BorderPane.alignment="CENTER" />
+                              <TextField fx:id="roomNo" promptText="Enter Room No." BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </center>
