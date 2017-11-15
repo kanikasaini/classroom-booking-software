@@ -12,14 +12,26 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.User_FacultyController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="mainNavBar" BorderPane.alignment="CENTER">
         <menus>
-            <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home" />
-          <Menu mnemonicParsing="false" text="Available Rooms" />
-          <Menu mnemonicParsing="false" text="Book Room" />
-          <Menu mnemonicParsing="false" text="My Bookings" />
+            <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Available Rooms">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAvailableRoomsButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Book Room">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleBookRoomButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" onAction="#handleMyBookingsButton" text="My Bookings">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Open" />
+               </items></Menu>
         </menus>
       </MenuBar>
    </top>
@@ -45,7 +57,7 @@
                      <left>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <top>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isha Kalra" BorderPane.alignment="CENTER">
+                              <Text fx:id="username" strokeType="OUTSIDE" strokeWidth="0.0" text="Isha Kalra" BorderPane.alignment="CENTER">
                                  <BorderPane.margin>
                                     <Insets top="20.0" />
                                  </BorderPane.margin>
