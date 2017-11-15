@@ -65,22 +65,22 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="58.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="9.0" prefWidth="202.0" promptText="Enter room number" />
+                                    <ComboBox fx:id="roomNo" editable="true" prefHeight="9.0" prefWidth="202.0" promptText="Enter room number" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="33.0" prefWidth="400.0">
                                  <children>
-                                    <DatePicker promptText="Date" />
+                                    <DatePicker fx:id="date" promptText="Date" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
+                                    <ComboBox fx:id="timeSlot" editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="47.0" prefWidth="400.0">
                                  <children>
-                                    <TextField alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="199.0" promptText="Capacity" />
+                                    <TextField fx:id="capacity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="199.0" promptText="Capacity" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="65.0" prefWidth="400.0">
