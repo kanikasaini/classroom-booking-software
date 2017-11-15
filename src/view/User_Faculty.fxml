@@ -28,9 +28,9 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleBookRoomButton" text="Open" />
                </items></Menu>
-          <Menu mnemonicParsing="false" onAction="#handleMyBookingsButton" text="My Bookings">
+          <Menu mnemonicParsing="false" text="My Bookings">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleMyBookingsButton" text="Open" />
                </items></Menu>
         </menus>
       </MenuBar>

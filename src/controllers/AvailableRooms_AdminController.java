@@ -1,3 +1,4 @@
+
 package controllers;
 
 import java.io.FileInputStream;
@@ -16,6 +17,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.text.Text;
+
 
 public class AvailableRooms_AdminController {
 	@FXML private TextField roomNo, capacity;
@@ -32,6 +38,7 @@ public class AvailableRooms_AdminController {
 		        User user= null;
 		        in = new ObjectInputStream(new FileInputStream("database/rooms/"+roomNumber+".txt"));
 		        System.out.println(roomNumber);
+		        in.close();
 		 	}
 		 	catch(FileNotFoundException e)
 		 	{
@@ -44,5 +51,30 @@ public class AvailableRooms_AdminController {
 				Scene homepage = new Scene(rootHomepage);
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 		 	}
+		}
+	@FXML private MenuBar mainNavBar;
+	@FXML private Button checkBtn;
+
+	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
+		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Admin.fxml"));
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
 	 }
+	 @FXML protected void handleBookRoomButton(ActionEvent event) throws Exception {
+		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Admin.fxml"));
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+	 }
+	 @FXML protected void handleMyBookingsButton(ActionEvent event) throws Exception {
+		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/MyBookings_Admin.fxml"));
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+	 }
+	 @FXML protected void handleHandleRequestsButton(ActionEvent event) throws Exception {
+		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/HandleRequests_Admin.fxml"));
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+	 }
+
 }
+

@@ -5,15 +5,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TimetableController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-            <Menu mnemonicParsing="false" text="Home" />
-          <Menu mnemonicParsing="false" text="Available Rooms" />
-          <Menu mnemonicParsing="false" text="Request Booking" />
-          <Menu mnemonicParsing="false" text="My Bookings" />
-          <Menu mnemonicParsing="false" text="Course Catalogue" />
+            <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleHomeButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Available Rooms">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAvailableRoomsButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Request Booking">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleRequestBookingButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="My Bookings">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMyBookingsButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Course Catalogue">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleCourseCatalogueButton" text="Open" />
+               </items></Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: #3FADA8;" text="Timetable" />
         </menus>
       </MenuBar>
@@ -31,7 +46,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
          <top>
-            <Label prefHeight="41.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="TIMETABLE" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
+            <Label fx:id="timetableLabel" prefHeight="41.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="TIMETABLE" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
          </top>
          <center>
             <TableView prefHeight="330.0" prefWidth="513.0" BorderPane.alignment="CENTER">
