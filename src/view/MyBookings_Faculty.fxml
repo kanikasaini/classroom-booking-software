@@ -8,13 +8,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MyBookings_FacultyController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-            <Menu mnemonicParsing="false" text="Home" />
-          <Menu mnemonicParsing="false" text="Available Rooms" />
-          <Menu mnemonicParsing="false" text="Book Room" />
+            <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleHomeButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Available Rooms">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAvailableRoomsButton" text="Open" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Book Room">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleBookRoomButton" text="Open" />
+               </items></Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: #3FADA8;" text="My Bookings" />
         </menus>
       </MenuBar>
@@ -32,7 +41,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
          <top>
-            <Label prefHeight="41.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="MY BOOKINGS" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
+            <Label fx:id="myBookingsLabel" prefHeight="41.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="MY BOOKINGS" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
          </top>
          <center>
             <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
