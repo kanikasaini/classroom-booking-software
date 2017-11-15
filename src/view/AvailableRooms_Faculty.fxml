@@ -15,9 +15,9 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-            <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home" />
+            <Menu mnemonicParsing="false" text="Home" />
           <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Available Rooms" />
-          <Menu mnemonicParsing="false" text="Book Room" />
+          <Menu mnemonicParsing="false" text="Book Rooms" />
           <Menu mnemonicParsing="false" text="My Bookings" />
         </menus>
       </MenuBar>
@@ -35,12 +35,12 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
          <top>
-            <Label alignment="CENTER" prefHeight="44.0" prefWidth="600.0" style="-fx-font-weight: bold; -fx-background-color: #808080;" text="AVAILABLE ROOMS" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="600.0" style="-fx-font-weight: bold; -fx-background-color: #808080;" text="CHECK AVAILABILITY" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
          </top>
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-               <top>
-                  <BorderPane prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <left>
                         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
                      </left>
@@ -48,28 +48,40 @@
                         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
                      </right>
                      <center>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                           <right>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Check Availability" BorderPane.alignment="CENTER" />
-                           </right>
-                           <center>
-                              <TextField promptText="Enter Room No." BorderPane.alignment="CENTER" />
-                           </center>
-                        </BorderPane>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="58.0" prefWidth="400.0">
+                                 <children>
+                                    <ComboBox editable="true" prefHeight="9.0" prefWidth="202.0" promptText="Enter room number" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="33.0" prefWidth="400.0">
+                                 <children>
+                                    <DatePicker promptText="Date" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
+                                 <children>
+                                    <ComboBox editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="47.0" prefWidth="400.0">
+                                 <children>
+                                    <TextField alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="199.0" promptText="Capacity" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="65.0" prefWidth="400.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Submit Request">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin></Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
                      </center>
                   </BorderPane>
-               </top>
-               <center>
-                  <TableView fixedCellSize="3.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                    <columns>
-                      <TableColumn prefWidth="160.0" text="Room No." />
-                      <TableColumn prefWidth="168.0" text="Capacity" />
-                        <TableColumn prefWidth="270.0" text=" Time Slots Available" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
                </center></BorderPane>
          </center>
       </BorderPane>
