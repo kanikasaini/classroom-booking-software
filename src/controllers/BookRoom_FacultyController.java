@@ -12,21 +12,21 @@ import javafx.stage.Stage;
 public class BookRoom_FacultyController {
 
 	@FXML private MenuBar mainNavBar;
-	@FXML private Button checkBtn;
+	@FXML private Button bookBtn;
 	
 	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Faculty.fxml"));
 			Scene homepage = new Scene(rootHomepage);
-			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+			((Stage)bookBtn.getScene().getWindow()).setScene(homepage);
 	 }
 	 @FXML protected void handleAvailableRoomsButton(ActionEvent event) throws Exception {
 		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/AvailableRooms_Faculty.fxml"));
 			Scene homepage = new Scene(rootHomepage);
-			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+			((Stage)bookBtn.getScene().getWindow()).setScene(homepage);
 	 }
 	 @FXML protected void handleMyBookingsButton(ActionEvent event) throws Exception {
 		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/MyBookings_Faculty.fxml"));
 			Scene homepage = new Scene(rootHomepage);
-			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+			((Stage)bookBtn.getScene().getWindow()).setScene(homepage);
 	 }
 }
