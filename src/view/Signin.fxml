@@ -60,17 +60,17 @@
                      <center>
                         <BorderPane prefHeight="98.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                            <top>
-                              <TextField fx:id="actiontarget" maxWidth="-Infinity" prefHeight="6.0" prefWidth="172.0" promptText="Email" BorderPane.alignment="CENTER">
+                              <TextField fx:id="loginEmail" maxWidth="-Infinity" prefHeight="6.0" prefWidth="172.0" promptText="Email" BorderPane.alignment="CENTER">
                                  <BorderPane.margin>
                                     <Insets top="20.0" />
                                  </BorderPane.margin>
                               </TextField>
                            </top>
                            <bottom>
-                              <Button fx:id="loginbtn" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Login" BorderPane.alignment="CENTER" />
+                              <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#handleLoginButtonAction" text="Login" BorderPane.alignment="CENTER" />
                            </bottom>
                            <center>
-                              <PasswordField maxWidth="-Infinity" promptText="Password" BorderPane.alignment="CENTER" />
+                              <PasswordField fx:id="loginPassword" maxWidth="-Infinity" promptText="Password" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </center>
@@ -94,7 +94,7 @@
                               </Text>
                            </top>
                            <bottom>
-                              <Button mnemonicParsing="false" text="Signup" BorderPane.alignment="CENTER">
+                              <Button fx:id="signupBtn" mnemonicParsing="false" onAction="#handleSignupButtonAction" text="Signup" BorderPane.alignment="CENTER">
                                  <BorderPane.margin>
                                     <Insets bottom="10.0" />
                                  </BorderPane.margin>
@@ -103,32 +103,28 @@
                            <center>
                               <BorderPane prefHeight="108.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                                  <top>
-                                    <TextField maxWidth="-Infinity" promptText="Email" BorderPane.alignment="CENTER">
+                                    <TextField fx:id="signupEmail" maxWidth="-Infinity" promptText="Email" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
                                           <Insets top="10.0" />
                                        </BorderPane.margin>
                                     </TextField>
                                  </top>
-                                 <left>
-                                    <RadioButton maxWidth="-Infinity" mnemonicParsing="false" text="Admin" BorderPane.alignment="CENTER">
-                                       <BorderPane.margin>
-                                          <Insets />
-                                       </BorderPane.margin>
-                                    </RadioButton>
-                                 </left>
-                                 <right>
-                                    <RadioButton maxWidth="-Infinity" mnemonicParsing="false" text="Student" BorderPane.alignment="CENTER" />
-                                 </right>
-                                 <center>
-                                    <RadioButton maxWidth="-Infinity" mnemonicParsing="false" text="Faculty" BorderPane.alignment="CENTER" />
-                                 </center>
                                  <bottom>
-                                    <PasswordField maxWidth="-Infinity" promptText="Password" BorderPane.alignment="CENTER">
+                                    <PasswordField fx:id="signupPassword" maxWidth="-Infinity" promptText="Password" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
                                           <Insets bottom="10.0" />
                                        </BorderPane.margin>
                                     </PasswordField>
                                  </bottom>
+                                 <left>
+                                    <RadioButton fx:id="adminType" mnemonicParsing="false" onAction="#addToToggleGroup" text="Admin" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <center>
+                                    <RadioButton fx:id="facultyType" mnemonicParsing="false" onAction="#addToToggleGroup" text="Faculty" BorderPane.alignment="CENTER" />
+                                 </center>
+                                 <right>
+                                    <RadioButton fx:id="studentType" mnemonicParsing="false" onAction="#addToToggleGroup" text="Student" BorderPane.alignment="CENTER" />
+                                 </right>
                               </BorderPane>
                            </center>
                         </BorderPane>

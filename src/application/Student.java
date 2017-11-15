@@ -8,9 +8,14 @@ private ArrayList<Course> coursesTaken;
 private static ArrayList<Course> allCourses;
 private ArrayList<Request> 	requests;
 
-public Student()
+public Student(String userId, String password, String type)
 {
-	super();
+	super(userId, password, type);
+	timetable= null; //need to read from file
+	coursesTaken = null;
+	allCourses= null;
+	requests= null;
 }
+
 
 }
