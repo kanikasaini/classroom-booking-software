@@ -11,5 +11,5 @@ public Faculty()
 	super();
 }
 
-private ArrayList<Room> bookings;
+private ArrayList<String> bookings;
 }

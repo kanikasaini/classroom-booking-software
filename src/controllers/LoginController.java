@@ -65,17 +65,29 @@ public class LoginController {
 			if(password.equals(user.getPassword()))
 					{
 						if(user.getType().equals("Student"))
-						{	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Student.fxml"));
+						{
+							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Student.fxml"));
+							Parent rootHomepage = fxmlLoader.load();
+							User_StudentController usc= fxmlLoader.<User_StudentController>getController();
+							usc.setUser(user);
 							Scene homepage = new Scene(rootHomepage);
 							((Stage)loginEmail.getScene().getWindow()).setScene(homepage);
 						}
 						else if(user.getType().equals("Admin"))
-						{	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Admin.fxml"));
+						{
+							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Admin.fxml"));
+							Parent rootHomepage = fxmlLoader.load();
+							User_AdminController uac= fxmlLoader.<User_AdminController>getController();
+							uac.setUser(user);
 							Scene homepage = new Scene(rootHomepage);
 							((Stage)loginEmail.getScene().getWindow()).setScene(homepage);
 						}
 						else if(user.getType().equals("Faculty"))
-						{	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Faculty.fxml"));
+						{
+							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Faculty.fxml"));
+						Parent rootHomepage = fxmlLoader.load();
+						User_FacultyController ufc= fxmlLoader.<User_FacultyController>getController();
+						ufc.setUser(user);
 						Scene homepage = new Scene(rootHomepage);
 						((Stage)loginEmail.getScene().getWindow()).setScene(homepage);
 						}
