@@ -77,14 +77,14 @@
                   </BorderPane>
                </top>
                <center>
-                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <columns>
-                      <TableColumn prefWidth="53.0" text="Code" />
-                      <TableColumn prefWidth="81.0" text="Name" />
-                        <TableColumn prefWidth="105.0" text="Prerequisite" />
-                        <TableColumn prefWidth="73.0" text="Faculty" />
-                        <TableColumn prefWidth="117.0" text="Postcondtions" />
-                        <TableColumn prefWidth="97.0" text="Timings" />
+                      <TableColumn fx:id="codeColumn" prefWidth="53.0" text="Code" />
+                      <TableColumn fx:id="nameColumn" prefWidth="81.0" text="Name" />
+                        <TableColumn fx:id="prereqColumn" prefWidth="105.0" text="Prerequisite" />
+                        <TableColumn fx:id="facultyColumn" prefWidth="73.0" text="Faculty" />
+                        <TableColumn fx:id="postconColumn" prefWidth="117.0" text="Postcondtions" />
+                        <TableColumn fx:id="timingColumn" prefWidth="97.0" text="Timings" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
