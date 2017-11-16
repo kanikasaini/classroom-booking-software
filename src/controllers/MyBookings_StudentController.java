@@ -2,6 +2,8 @@ package controllers;
 
 import java.io.IOException;
 
+import application.Student;
+import application.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,37 +13,57 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class MyBookings_StudentController {
+	private Student student;
 
+	protected void setUser(User a)
+	{
+		this.student= (Student)a;
+	}
 	@FXML private Label myBookingsLabel;
-	
-	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
-	 		Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Student.fxml"));
-	 		Scene homepage = new Scene(rootHomepage);
+
+	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Student.fxml"));
+		Parent rootHomepage = fxmlLoader.load();
+		User_StudentController usc= fxmlLoader.<User_StudentController>getController();
+		usc.setUser(student);
+		Scene homepage = new Scene(rootHomepage);
 			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);
 	 }
-	 @FXML protected void handleAvailableRoomsButton() throws IOException {
-			Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/AvailableRooms_Student.fxml"));
-			Scene Homepage = new Scene(rootHomepage, 400,400);	
-			((Stage)myBookingsLabel.getScene().getWindow()).setScene(Homepage);
+	@FXML protected void handleAvailableRoomsButton() throws IOException {
+	 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/AvailableRooms_Student.fxml"));
+		Parent rootHomepage = fxmlLoader.load();
+		AvailableRooms_StudentController usc= fxmlLoader.<AvailableRooms_StudentController>getController();
+		usc.setUser(student);
+		Scene homepage = new Scene(rootHomepage);
+			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);
 	 }
-	 
+
 	 @FXML protected void handleRequestBookingButton() throws IOException {
-			Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/RequestBooking_Student.fxml"));
-			Scene Homepage = new Scene(rootHomepage, 400,400);	
-			((Stage)myBookingsLabel.getScene().getWindow()).setScene(Homepage);
-		
+		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/RequestBooking_Student.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			RequestBooking_StudentController usc= fxmlLoader.<RequestBooking_StudentController>getController();
+			usc.setUser(student);
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);
+
 	 }
-	 
+
 	 @FXML protected void handleCourseCatalogueButton() throws IOException {
-			Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/Courses.fxml"));
-			Scene Homepage = new Scene(rootHomepage, 400,400);	
-			((Stage)myBookingsLabel.getScene().getWindow()).setScene(Homepage);
+		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/Courses.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			CoursesController usc= fxmlLoader.<CoursesController>getController();
+			usc.setUser(student);
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);
 	 }
-	 
+
 	 @FXML protected void handleTimetableButton() throws IOException {
-			Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/Timetable.fxml"));
-			Scene Homepage = new Scene(rootHomepage, 400,400);	
-			((Stage)myBookingsLabel.getScene().getWindow()).setScene(Homepage);
+		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/Timetable.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			TimetableController usc= fxmlLoader.<TimetableController>getController();
+			usc.setUser(student);
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);
 	 }
 }
 

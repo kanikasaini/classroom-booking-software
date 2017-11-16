@@ -1,4 +1,7 @@
 package application;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.*;
 
@@ -22,8 +25,13 @@ public String getNumber() {
 	public void setbookedSlots(ArrayList<String> bookedSlots) {
 		this.bookedSlots = bookedSlots;
 	}
-	public void addSlot(String slot)
+	public void addBookedSlot(String slot)
 	{
+		this.bookedSlots.add(slot);
+	}
+	public void addBookedSlot(String day, String start, String end)
+	{
+		String slot=day+" "+start+"-"+end;
 		this.bookedSlots.add(slot);
 	}
 	public String number;
@@ -51,7 +59,9 @@ public String getNumber() {
 			String start2=timeS2E[0]; String end2=timeS2E[1];
 			if(dayntime[0].equalsIgnoreCase(day))
 			{
-				if( (greater(end1,start2)==1 & greater(start2,start1)!=0) | (greater(end1,end2)!=0 & greater(end2,start1)==1) )
+				boolean b1 = (greater(end1,start2)==1 & greater(start2,start1)!=0) || (greater(end1,end2)!=0 & greater(end2,start1)==1);
+				boolean b2 = (greater(end2,start1)==1 & greater(start1,start2)!=0) || (greater(end2,end1)!=0 & greater(end1,start2)==1);
+				if(b1 || b2)
 					flag=true;
 				else
 					flag=false;
@@ -97,4 +107,5 @@ public String getNumber() {
 				return -1;
 		}
 	}
+
 }

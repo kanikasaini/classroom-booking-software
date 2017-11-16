@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import application.Admin;
 import application.Room;
 import application.User;
 import javafx.collections.FXCollections;
@@ -34,7 +35,13 @@ import javafx.scene.text.Text;
 public class AvailableRooms_AdminController {
 	@FXML private TextField  capacity;
 	@FXML private ComboBox<String> roomNo, timeStart, timeEnd;
+	private Admin admin;
 
+
+	protected void setUser(Admin a)
+	{
+		this.admin= (Admin)a;
+	}
     public void initialize() {
         List<String> list = new ArrayList<String>();
         for(int i=8;i<=19;i++)
@@ -69,10 +76,10 @@ public class AvailableRooms_AdminController {
 		        in = new ObjectInputStream(new FileInputStream("database/rooms/"+roomNumber+".txt"));
 		        in.close();
 		        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
-		        Room room = (Room)in.readObject();
+		        //Room room = (Room)in.readObject();
 		        ArrayList<String> timeSlots= new ArrayList<String>();
-		        //timeSlots.add("Monday 10:00-12:00");
-		       // Room room = new Room(roomNumber, c, timeSlots);
+		        timeSlots.add("Monday 10:00-12:00");
+		        Room room = new Room(roomNumber, c, timeSlots);
 		        boolean flag= room.checkOverlap(day, start, end);
 		        if(flag==true)
 		        {
@@ -113,23 +120,35 @@ public class AvailableRooms_AdminController {
 	@FXML private MenuBar mainNavBar;
 	@FXML private Button checkBtn;
 
-	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
-		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/User_Admin.fxml"));
-			Scene homepage = new Scene(rootHomepage);
-			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Admin.fxml"));
+		Parent rootHomepage = fxmlLoader.load();
+		User_AdminController usc= fxmlLoader.<User_AdminController>getController();
+		usc.setUser(admin);
+		Scene homepage = new Scene(rootHomepage);
+		((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
 	 }
-	 @FXML protected void handleBookRoomButton(ActionEvent event) throws Exception {
-		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Admin.fxml"));
-			Scene homepage = new Scene(rootHomepage);
-			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
+	@FXML protected void handleBookRoomButton(ActionEvent event) throws Exception {
+	 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Admin.fxml"));
+		Parent rootHomepage = fxmlLoader.load();
+		BookRoom_AdminController usc= fxmlLoader.<BookRoom_AdminController>getController();
+		usc.setUser(admin);
+		Scene homepage = new Scene(rootHomepage);
+		((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
 	 }
 	 @FXML protected void handleMyBookingsButton(ActionEvent event) throws Exception {
-		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/MyBookings_Admin.fxml"));
+		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/MyBookings_Admin.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			MyBookings_AdminController usc= fxmlLoader.<MyBookings_AdminController>getController();
+			usc.setUser(admin);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
 	 }
 	 @FXML protected void handleHandleRequestsButton(ActionEvent event) throws Exception {
-		 	Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/HandleRequests_Admin.fxml"));
+		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/HandleRequests_Admin.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			HandleRequests_AdminController usc= fxmlLoader.<HandleRequests_AdminController>getController();
+			usc.setUser(admin);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)checkBtn.getScene().getWindow()).setScene(homepage);
 	 }

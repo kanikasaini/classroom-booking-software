@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Admin extends User {
 
-private ArrayList<Room> bookings;
-private ArrayList<Request> pendingRequests;
+private ArrayList<Booking> bookings = new ArrayList<Booking>();
+private ArrayList<Request> pendingRequests= new ArrayList<Request>();
 
 public Admin()
 {
@@ -13,8 +13,6 @@ public Admin()
 public Admin(String userId,String password,String type)
 {
 	super(userId, password, type);
-	bookings= null;
-	pendingRequests = null;
 }
 public void BookRoom(String roomNumber)
 {
@@ -27,5 +25,14 @@ public void cancelBooking(String roomNumber)
 public void handleRequest(Request request)
 {
 
+}
+public void addBooking(Booking b)
+{
+	System.out.print("error");
+	bookings.add(b);
+}
+public void addRequest(Request r)
+{
+	pendingRequests.add(r);
 }
 }

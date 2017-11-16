@@ -56,25 +56,10 @@
                 <TableColumn prefWidth="75.0" text="ROOM" />
                 <TableColumn prefWidth="75.0" text="DAY" />
                   <TableColumn prefWidth="75.0" text="TIME" />
+                  <TableColumn prefWidth="75.0" text="CANCEL" />
               </columns>
             </TableView>
          </center>
-         <right>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="CANCEL ALL" VBox.vgrow="ALWAYS">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Cancel" />
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Cancel" />
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Cancel" />
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Cancel" />
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Cancel" />
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Cancel" />
-               </children></VBox>
-         </right>
       </BorderPane>
    </center>
 </BorderPane>
