@@ -65,12 +65,12 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="71.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="27.0" prefWidth="202.0" promptText="Room" />
+                                    <ComboBox fx:id="roomNo" editable="true" prefHeight="27.0" prefWidth="202.0" promptText="Room" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="43.0" prefWidth="400.0">
                                  <children>
-                                    <DatePicker promptText="Date" />
+                                    <DatePicker fx:id="date" promptText="Date" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="56.0" prefWidth="400.0">

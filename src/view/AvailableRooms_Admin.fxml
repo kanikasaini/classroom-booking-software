@@ -75,7 +75,12 @@
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox fx:id="timeSlot" editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
+                                    <ComboBox fx:id="timeStart" editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time start" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="34.0" prefWidth="400.0">
+                                 <children>
+                                    <ComboBox fx:id="timeEnd" editable="true" prefWidth="200.0" promptText="Time end" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="47.0" prefWidth="400.0">
@@ -85,7 +90,7 @@
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="65.0" prefWidth="400.0">
                                  <children>
-                                    <Button fx:id="checkBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Check">
+                                    <Button fx:id="checkBtn" mnemonicParsing="false" onAction="#handleCheckButtonAction" prefHeight="25.0" prefWidth="123.0" text="Check">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin></Button>
