@@ -65,25 +65,32 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="71.0" prefWidth="400.0">
                                  <children>
+
                                     <ComboBox fx:id="roomNo" editable="true" prefHeight="27.0" prefWidth="202.0" promptText="Room" />
+
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="43.0" prefWidth="400.0">
                                  <children>
+
                                     <DatePicker fx:id="date" promptText="Date" />
+
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="56.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
+                                    <ComboBox fx:id="timeStart" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="202.0" promptText="Time start" />
                                  </children>
                               </VBox>
+                              <VBox alignment="CENTER" prefHeight="52.0" prefWidth="400.0">
+                                 <children>
+                                    <ComboBox fx:id="timeEnd" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="202.0" promptText="Time end" />
+                                 </children></VBox>
                               <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
                                  <children>
                                     <Button fx:id="bookBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Book" />
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" prefHeight="52.0" prefWidth="400.0" />
                            </children>
                         </VBox>
                      </center>

@@ -13,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BookRoom_FacultyController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="mainNavBar" BorderPane.alignment="CENTER">
         <menus>
             <Menu mnemonicParsing="false" text="Home">
                <items>
@@ -23,7 +23,7 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleAvailableRoomsButton" text="Open" />
                </items></Menu>
-          <Menu mnemonicParsing="false" style="-fx-background-color: #3FADA8;" text="Book Room" />
+            <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Book Room" />
           <Menu mnemonicParsing="false" text="My Bookings">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleMyBookingsButton" text="Open" />
@@ -44,7 +44,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #808080;" BorderPane.alignment="CENTER">
          <top>
-            <Label alignment="CENTER" prefHeight="44.0" prefWidth="600.0" style="-fx-font-weight: bold; -fx-background-color: #808080;" text="REQUEST BOOKING" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="600.0" style="-fx-font-weight: bold; -fx-background-color: #808080;" text="BOOK ROOM" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
          </top>
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
@@ -59,37 +59,28 @@
                      <center>
                         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="58.0" prefWidth="400.0">
+                              <VBox alignment="CENTER" prefHeight="71.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="9.0" prefWidth="202.0" promptText="Preferred Room" />
+                                    <ComboBox editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="202.0" promptText="Room" />
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" prefHeight="33.0" prefWidth="400.0">
+                              <VBox alignment="CENTER" prefHeight="43.0" prefWidth="400.0">
                                  <children>
-                                    <DatePicker promptText="Date" />
+                                    <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="202.0" promptText="Date" />
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
+                              <VBox alignment="CENTER" prefHeight="56.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
+                                    <ComboBox editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="202.0" promptText="Time start" />
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" prefHeight="47.0" prefWidth="400.0">
+                              <VBox alignment="CENTER" prefHeight="52.0" prefWidth="400.0">
                                  <children>
-                                    <TextField alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="199.0" promptText="Purpose" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="65.0" prefWidth="400.0">
+                                    <ComboBox editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="202.0" promptText="Time end" />
+                                 </children></VBox>
+                              <VBox alignment="CENTER" prefHeight="67.0" prefWidth="400.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="44.0" prefWidth="400.0">
-                                       <children>
-                                          <TextField maxWidth="-Infinity" prefHeight="25.0" prefWidth="197.0" promptText="Capacity" />
-                                       </children>
-                                    </VBox>
-                                    <Button fx:id="checkBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Submit Request">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin></Button>
+                                    <Button fx:id="bookBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Book" />
                                  </children>
                               </VBox>
                            </children>
