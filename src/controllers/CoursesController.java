@@ -62,25 +62,23 @@ public class CoursesController {
         	for(int i=6;i<12;i++)
         	{
         		if(coursen[i].equals("")!=true)
-        			allTimings = allTimings + heading[i]+'\n'+coursen[i]; 
+        			allTimings = allTimings + heading[i] +" "+coursen[i]+" "; 
         	}
         	//System.out.println(allTimings);
         	String[] allTimingsArray = allTimings.split("\\$");
         	
-        	//System.out.println(allTimingsArray);
+        	System.out.println(Arrays.toString(allTimingsArray));
         	for(int k=0;k<allTimingsArray.length;k++) {
         		allTimingsNextLine = allTimingsNextLine + allTimingsArray[k] + '\n';
         	}
-        	System.out.println("coursen[14]="+coursen[14]);
+        	
         	String[] postconditions = coursen[14].split("\\.");
-        	System.out.println((Arrays.toString(postconditions)));
         	String postconadd="";
         	for(int z=0;z<postconditions.length;z++)
         		postconadd = postconadd + postconditions[z] + '\n' ;
         
         	courselist.add(new Course(coursen[2],coursen[1],coursen[13],coursen[3],postconadd,allTimings));
         	System.out.println(allTimings);
-        	//System.out.println(courselist.size());
         }
     	
     }
