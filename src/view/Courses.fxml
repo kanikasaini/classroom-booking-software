@@ -67,10 +67,10 @@
                      <center>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <right>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Search Course" BorderPane.alignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#onClickingSearch" prefHeight="25.0" prefWidth="134.0" text="Search Course" BorderPane.alignment="CENTER" />
                            </right>
                            <center>
-                              <TextField promptText="Enter postcondition keywords" BorderPane.alignment="CENTER" />
+                              <TextField fx:id="searchWord" promptText="Enter postcondition keywords" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </center>
@@ -79,12 +79,13 @@
                <center>
                   <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <columns>
-                      <TableColumn fx:id="codeColumn" prefWidth="53.0" text="Code" />
-                      <TableColumn fx:id="nameColumn" prefWidth="81.0" text="Name" />
+                      <TableColumn fx:id="codeColumn" maxWidth="1700.0" prefWidth="53.0" text="Code" />
+                      <TableColumn fx:id="nameColumn" maxWidth="3000.0" prefWidth="81.0" text="Name" />
                         <TableColumn fx:id="prereqColumn" prefWidth="105.0" text="Prerequisite" />
                         <TableColumn fx:id="facultyColumn" prefWidth="73.0" text="Faculty" />
                         <TableColumn fx:id="postconColumn" prefWidth="117.0" text="Postcondtions" />
                         <TableColumn fx:id="timingColumn" prefWidth="97.0" text="Timings" />
+                        <TableColumn fx:id="addColumn" maxWidth="1200.0" prefWidth="75.0" text="Add" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
