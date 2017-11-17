@@ -49,39 +49,42 @@
             <Label fx:id="timetableLabel" prefHeight="41.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="TIMETABLE" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER" />
          </top>
          <center>
-            <TableView prefHeight="330.0" prefWidth="513.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableView" prefHeight="330.0" prefWidth="513.0" BorderPane.alignment="CENTER">
             <columnResizePolicy>
         	<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
         	</columnResizePolicy>
               <columns>
-                <TableColumn prefWidth="75.0" text="8:30-9:00" />
-                <TableColumn prefWidth="75.0" text="9:00-9:30" />
-                <TableColumn prefWidth="75.0" text="9:30-10:00" />
-                <TableColumn prefWidth="75.0" text="10:00-10:30" />
-                <TableColumn prefWidth="75.0" text="10:30-11:00" />
-                <TableColumn prefWidth="75.0" text="11:00-11:30" />
-                <TableColumn prefWidth="75.0" text="11:30-12:00" />
-                <TableColumn prefWidth="75.0" text="12:00-12:30" />
-                <TableColumn prefWidth="75.0" text="12:30-1:00" />
-                <TableColumn prefWidth="75.0" text="1:00-1:30" />
-                <TableColumn prefWidth="75.0" text="1:30-2:00" />
-                <TableColumn prefWidth="75.0" text="2:00-2:30" />
-                <TableColumn prefWidth="75.0" text="2:30-3:00" />
-                <TableColumn prefWidth="75.0" text="3:00-3:30" />
-                <TableColumn prefWidth="75.0" text="3:30-4:00" />
-                <TableColumn prefWidth="75.0" text="4:00-4:30" />
+                <TableColumn fx:id="eightThirtyNineColumn" prefWidth="75.0" text="8:30-9:00" />
+                <TableColumn fx:id="nineNineThirtyColumn" prefWidth="75.0" text="9:00-9:30" />
+                <TableColumn fx:id="nineThirtyTenColumn" prefWidth="75.0" text="9:30-10:00" />
+                <TableColumn fx:id="tenTenThirtyColumn" prefWidth="75.0" text="10:00-10:30" />
+                <TableColumn fx:id="tenThirtyElevenColumn" prefWidth="75.0" text="10:30-11:00" />
+                <TableColumn fx:id="elevenElevenThirtyColumn" prefWidth="75.0" text="11:00-11:30" />
+                <TableColumn fx:id="elevenThirtyTwelveColumn" prefWidth="75.0" text="11:30-12:00" />
+                <TableColumn fx:id="twelveTwelveThirtyColumn" prefWidth="75.0" text="12:00-12:30" />
+                <TableColumn fx:id="twelveThirtyOneColumn" prefWidth="75.0" text="12:30-1:00" />
+                <TableColumn fx:id="oneOneThirtyColumn" prefWidth="75.0" text="1:00-1:30" />
+                <TableColumn fx:id="oneThirtyTwoColumn" prefWidth="75.0" text="1:30-2:00" />
+                <TableColumn fx:id="twoTwoThirtyColumn" prefWidth="75.0" text="2:00-2:30" />
+                <TableColumn fx:id="twoThirtyThreeColumn" prefWidth="75.0" text="2:30-3:00" />
+                <TableColumn fx:id="threeThreeThirtyColumn" prefWidth="75.0" text="3:00-3:30" />
+                <TableColumn fx:id="threeThirtyFourColumn" prefWidth="75.0" text="3:30-4:00" />
+                <TableColumn fx:id="fourFourThirtyColumn" prefWidth="75.0" text="4:00-4:30" />
+                  <TableColumn fx:id="fourThirtyFiveColumn" prefWidth="75.0" text="4:30-5:00" />
+                  <TableColumn fx:id="fiveFiveThirtyColumn" prefWidth="75.0" text="5:00-5:30" />
+                  <TableColumn fx:id="fiveThirtySixColumn" prefWidth="75.0" text="5:30-6:00" />
               </columns>
             </TableView>
          </center>
          <left>
             <VBox prefHeight="313.0" prefWidth="87.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="30.0" prefWidth="87.0" text="     DAY/TIME" textFill="WHITE" />
-                  <Label prefHeight="150.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="     Monday" textFill="WHITE" />
-                  <Label prefHeight="150.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="     Tuesday" textFill="WHITE" />
-                  <Label prefHeight="150.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="   Wednesday" textFill="WHITE" />
-                  <Label prefHeight="150.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="     Thursday" textFill="WHITE" />
-                  <Label prefHeight="150.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="       Friday" textFill="WHITE" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="87.0" text="     DAY/TIME" textFill="WHITE" />
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="     Monday" textFill="WHITE" />
+                  <Label prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="     Tuesday" textFill="WHITE" />
+                  <Label prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="   Wednesday" textFill="WHITE" />
+                  <Label prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="     Thursday" textFill="WHITE" />
+                  <Label prefHeight="55.0" prefWidth="87.0" style="-fx-background-color: #333333;" text="       Friday" textFill="WHITE" />
                </children></VBox>
          </left>
       </BorderPane>

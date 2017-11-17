@@ -15,14 +15,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class CoursesController {
 
+	@FXML private TextField searchWord;
 	@FXML private TableView<Course> tableView;
     @FXML private TableColumn<Course, String> codeColumn;
     @FXML private TableColumn<Course, String> nameColumn;
@@ -47,11 +54,39 @@ public class CoursesController {
         tableView.setItems(courselist);
     }
     
+    
+    
+    
+    @FXML protected void onClickingSearch(ActionEvent event) throws Exception {
+		String word = searchWord.getText();
+		System.out.println(word);
+		ObservableList<Course> searchCourseList = FXCollections.observableArrayList();
+		if(word.equals(""))
+			searchCourseList = courselist;
+		else
+		{
+			for(int i=0;i<courselist.size();i++)
+			{
+				String[] searchArray = courselist.get(i).getPostcon().split(" ");
+				for(int j=0;j<searchArray.length;j++)
+				{
+					if(searchArray[j].equalsIgnoreCase(word))
+					{
+						//System.out.println(Arrays.toString(searchArray));
+						searchCourseList.add(courselist.get(i));
+						//System.out.println("found it!="+searchArray[j]+"at "+j);
+						break;
+					}
+				}
+			}
+		}
+		tableView.setItems(searchCourseList);
+	 }
+    
     public void makeList() throws IOException
     {
     	BufferedReader a = new BufferedReader(new FileReader("database/timetable/timetable.csv"));
     	String heading[] = a.readLine().split(",");
-    	//System.out.println((Arrays.toString(heading)));
         for(int j=0;j<=15;j++) {
         	String[] coursen = a.readLine().split(",");
         	
@@ -65,7 +100,7 @@ public class CoursesController {
         	//System.out.println(allTimings);
         	String[] allTimingsArray = allTimings.split("\\$");
         	
-        	System.out.println(Arrays.toString(allTimingsArray));
+        	//System.out.println(Arrays.toString(allTimingsArray));
         	for(int k=0;k<allTimingsArray.length;k++) {
         		allTimingsNextLine = allTimingsNextLine + allTimingsArray[k] + '\n';
         	}
@@ -76,7 +111,7 @@ public class CoursesController {
         		postconadd = postconadd + postconditions[z] + '\n' ;
         
         	courselist.add(new Course(coursen[2],coursen[1],coursen[13],coursen[3],postconadd,allTimings));
-        	System.out.println(allTimings);
+        	//System.out.println(allTimings);
         }
     	
     }
