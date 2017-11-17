@@ -37,7 +37,6 @@ public class AvailableRooms_AdminController {
 	@FXML private ComboBox<String> roomNo, timeStart, timeEnd;
 	private Admin admin;
 
-
 	protected void setUser(Admin a)
 	{
 		this.admin= (Admin)a;
@@ -76,10 +75,8 @@ public class AvailableRooms_AdminController {
 		        in = new ObjectInputStream(new FileInputStream("database/rooms/"+roomNumber+".txt"));
 		        in.close();
 		        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
-		        //Room room = (Room)in.readObject();
-		        ArrayList<String> timeSlots= new ArrayList<String>();
-		        timeSlots.add("Monday 10:00-12:00");
-		        Room room = new Room(roomNumber, c, timeSlots);
+		        Room room = (Room)in.readObject();
+
 		        boolean flag= room.checkOverlap(day, start, end);
 		        if(flag==true)
 		        {

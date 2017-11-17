@@ -23,7 +23,7 @@ public class MyBookings_FacultyController {
 	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Faculty.fxml"));
 			Parent rootHomepage = fxmlLoader.load();
-			AvailableRooms_FacultyController usc= fxmlLoader.<AvailableRooms_FacultyController>getController();
+			User_FacultyController usc= fxmlLoader.<User_FacultyController>getController();
 			usc.setUser(faculty);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);
@@ -40,7 +40,7 @@ public class MyBookings_FacultyController {
 	 @FXML protected void handleBookRoomButton() throws IOException {
 		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Faculty.fxml"));
 			Parent rootHomepage = fxmlLoader.load();
-			AvailableRooms_FacultyController usc= fxmlLoader.<AvailableRooms_FacultyController>getController();
+			BookRoom_FacultyController usc= fxmlLoader.<BookRoom_FacultyController>getController();
 			usc.setUser(faculty);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)myBookingsLabel.getScene().getWindow()).setScene(homepage);

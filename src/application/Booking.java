@@ -1,6 +1,8 @@
 package application;
 
-public class Booking {
+import java.io.Serializable;
+
+public class Booking implements Serializable {
 
 	private String day;
 	private String time;
@@ -10,7 +12,7 @@ public class Booking {
 	{
 		this.roomNo= roomNo;
 		this.day= day;
-		this.time= start+"-"+end;
+		this.time = start+"-"+end;
 	}
 
 	public String getDay() {

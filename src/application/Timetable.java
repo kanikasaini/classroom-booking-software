@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package application;
 
 public class Timetable {
@@ -214,3 +215,13 @@ public class Timetable {
 	}
 	
 }
+=======
+package application;
+import java.io.Serializable;
+import java.util.*;
+
+public class Timetable implements Serializable{
+
+private HashMap<String, ArrayList<Course>> table;
+}
+>>>>>>> a0cb42afdf3bd6d7b54025126f6be6dd0616473c
