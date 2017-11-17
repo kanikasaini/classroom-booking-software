@@ -11,5 +11,10 @@ public Faculty()
 	super();
 }
 
-private ArrayList<String> bookings;
+private ArrayList<Booking> bookings = new ArrayList<Booking>();
+public void addBooking(Booking b)
+{
+	System.out.print("error");
+	bookings.add(b);
+}
 }

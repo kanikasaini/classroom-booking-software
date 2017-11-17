@@ -75,10 +75,8 @@ public class BookRoom_AdminController {
 	        in = new ObjectInputStream(new FileInputStream("database/rooms/"+roomNumber+".txt"));
 	        in.close();
 	        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
-	        //Room room = (Room)in.readObject();
-	        ArrayList<String> timeSlots= new ArrayList<String>();
-	        timeSlots.add("Monday 10:00-12:00");
-	        Room room = new Room(roomNumber, 180, timeSlots);
+	        Room room = (Room)in.readObject();
+	       // System.out.println(room.getNumber());
 	        boolean flag= room.checkOverlap(day, start, end);
 	        if(flag==true)
 	        {
@@ -94,10 +92,12 @@ public class BookRoom_AdminController {
 	        else
 	        {
 	        	room.addBookedSlot(day, start, end);
-	        	serialize(room);
 	        	Booking b = new Booking(room.getNumber(), day, start, end);
-
+	        	System.out.println(admin.getType());
+	        	System.out.println(b.getRoomNo());
 	        	admin.addBooking(b);
+	        	serialize(room);
+	        	serialize(admin);
 	        	Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Classroom Booking System");
 				alert.setHeaderText("Booked Room Successfully");
@@ -128,6 +128,17 @@ public class BookRoom_AdminController {
         try {
             out = new ObjectOutputStream(new FileOutputStream("database/bookedRooms/"+pl.getNumber()+".txt"));
             out.writeObject(pl);
+        } finally
+        {
+            out.close();
+        }
+    	}
+    	public static void serialize(User user) throws IOException
+    	{
+        ObjectOutputStream out = null;
+        try {
+            out = new ObjectOutputStream(new FileOutputStream("database/users/"+user.getUserId()+".txt"));
+            out.writeObject(user);
         } finally
         {
             out.close();

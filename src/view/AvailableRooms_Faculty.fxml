@@ -20,7 +20,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleHomeButton" text="Open" />
                </items></Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Available Rooms" />
-          <Menu mnemonicParsing="false" text="Book Rooms">
+          <Menu mnemonicParsing="false" text="Book Room">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleBookRoomButton" text="Open" />
                </items></Menu>
@@ -61,27 +61,32 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="58.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="9.0" prefWidth="202.0" promptText="Enter room number" />
+                                    <ComboBox fx:id="roomNo" editable="true" prefHeight="9.0" prefWidth="202.0" promptText="Enter room number" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="33.0" prefWidth="400.0">
                                  <children>
-                                    <DatePicker promptText="Date" />
+                                    <DatePicker fx:id="date" promptText="Date" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
                                  <children>
-                                    <ComboBox editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time" />
+                                    <ComboBox fx:id="timeStart" editable="true" prefHeight="27.0" prefWidth="200.0" promptText="Time start" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="34.0" prefWidth="400.0">
+                                 <children>
+                                    <ComboBox fx:id="timeEnd" editable="true" prefWidth="200.0" promptText="Time end" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="47.0" prefWidth="400.0">
                                  <children>
-                                    <TextField alignment="CENTER" maxWidth="-Infinity" prefHeight="25.0" prefWidth="199.0" promptText="Capacity" />
+                                    <TextField fx:id="capacity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="199.0" promptText="Capacity" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="65.0" prefWidth="400.0">
                                  <children>
-                                    <Button fx:id="checkBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Submit Request">
+                                    <Button fx:id="checkBtn" mnemonicParsing="false" onAction="#handleCheckButtonAction" prefHeight="25.0" prefWidth="123.0" text="Check">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin></Button>
