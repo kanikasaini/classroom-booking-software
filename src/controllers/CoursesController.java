@@ -29,10 +29,10 @@ public class CoursesController {
     @FXML private TableColumn<Course, String> prereqColumn;
     @FXML private TableColumn<Course, String> facultyColumn;
     @FXML private TableColumn<Course, String> postconColumn;
-    @FXML private TableColumn<Course, String> timingColumn; 
+    @FXML private TableColumn<Course, String> timingColumn;
     private ObservableList<Course> courselist = FXCollections.observableArrayList();
-    
-    
+
+
     public void initialize() throws IOException {
     	codeColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("code"));
     	nameColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
@@ -46,7 +46,7 @@ public class CoursesController {
         makeList();
         tableView.setItems(courselist);
     }
-    
+
     public void makeList() throws IOException
     {
     	BufferedReader a = new BufferedReader(new FileReader("database/timetable/timetable.csv"));
@@ -54,35 +54,35 @@ public class CoursesController {
     	//System.out.println((Arrays.toString(heading)));
         for(int j=0;j<=15;j++) {
         	String[] coursen = a.readLine().split(",");
-        	
+
         	String allTimings="";
         	String allTimingsNextLine="";
         	for(int i=6;i<12;i++)
         	{
         		if(coursen[i].equals("")!=true)
-        			allTimings = allTimings + heading[i] +" "+coursen[i]+" "; 
+        			allTimings = allTimings + heading[i] +" "+coursen[i]+" ";
         	}
         	//System.out.println(allTimings);
         	String[] allTimingsArray = allTimings.split("\\$");
-        	
+
         	System.out.println(Arrays.toString(allTimingsArray));
         	for(int k=0;k<allTimingsArray.length;k++) {
         		allTimingsNextLine = allTimingsNextLine + allTimingsArray[k] + '\n';
         	}
-        	
+
         	String[] postconditions = coursen[14].split("\\.");
         	String postconadd="";
         	for(int z=0;z<postconditions.length;z++)
         		postconadd = postconadd + postconditions[z] + '\n' ;
-        
+
         	courselist.add(new Course(coursen[2],coursen[1],coursen[13],coursen[3],postconadd,allTimings));
         	System.out.println(allTimings);
         }
-    	
+
     }
-	
+
 	@FXML private Label coursesLabel;
-	
+
 
 	private Student student;
 

@@ -38,7 +38,7 @@ public class User_FacultyController {
 	 @FXML protected void handleBookRoomButton() throws IOException {
 		 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Faculty.fxml"));
 			Parent rootHomepage = fxmlLoader.load();
-			AvailableRooms_FacultyController usc= fxmlLoader.<AvailableRooms_FacultyController>getController();
+			BookRoom_FacultyController usc= fxmlLoader.<BookRoom_FacultyController>getController();
 			usc.setUser(faculty);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)username.getScene().getWindow()).setScene(homepage);
@@ -47,7 +47,7 @@ public class User_FacultyController {
 	 @FXML protected void handleMyBookingsButton() throws IOException {
 		 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/MyBookings_Faculty.fxml"));
 			Parent rootHomepage = fxmlLoader.load();
-			AvailableRooms_FacultyController usc= fxmlLoader.<AvailableRooms_FacultyController>getController();
+			MyBookings_FacultyController usc= fxmlLoader.<MyBookings_FacultyController>getController();
 			usc.setUser(faculty);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)username.getScene().getWindow()).setScene(homepage);
