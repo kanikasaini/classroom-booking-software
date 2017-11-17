@@ -26,8 +26,8 @@ public Admin(String userId,String password,String type) throws Exception
     	     r = (Request)in.readObject();
     	     pendingRequests.add(r);
      }
-
-     in.close();
+     if(in!=null)
+    	 in.close();
 
 }
 public ArrayList<Booking> getBookings() {
@@ -46,8 +46,9 @@ public void BookRoom(String roomNumber)
 {
 
 }
-public void cancelBooking(String roomNumber)
+public void cancelBooking(Booking b)
 {
+	bookings.remove(b);
 
 }
 public void handleRequest(Request request)

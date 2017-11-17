@@ -52,5 +52,12 @@ public class User_FacultyController {
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)username.getScene().getWindow()).setScene(homepage);
 	 }
+	 @FXML protected void handleLogoutButton(ActionEvent event) throws Exception {
+		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/Signin.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			LoginController usc= fxmlLoader.<LoginController>getController();
+			Scene homepage = new Scene(rootHomepage);
+			((Stage)username.getScene().getWindow()).setScene(homepage);
+	 }
 
 }

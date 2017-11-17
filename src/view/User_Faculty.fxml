@@ -19,6 +19,7 @@
             <Menu mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home">
                <items>
                   <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#handleLogoutButton" text="Logout" />
                </items></Menu>
           <Menu mnemonicParsing="false" text="Available Rooms">
                <items>

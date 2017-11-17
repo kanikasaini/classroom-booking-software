@@ -19,6 +19,7 @@
             <Menu fx:id="home" mnemonicParsing="false" style="-fx-background-color: #3fada8;" text="Home">
                <items>
                   <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#handleLogoutButton" text="Logout" />
                </items></Menu>
           <Menu fx:id="availableRooms" mnemonicParsing="false" text="Available Rooms">
                <items>
@@ -71,7 +72,7 @@
                               </Text>
                            </top>
                            <bottom>
-                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                            </bottom>
                            <center>
                               <ImageView fitHeight="163.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
@@ -95,7 +96,7 @@
                               </Text>
                            </top>
                            <center>
-                              <TextArea prefHeight="257.0" prefWidth="328.0" text="Hi!&#10;I'm doing good.&#10;" BorderPane.alignment="CENTER" />
+                              <TextArea fx:id="notes" onMouseExited="#handleNotes" prefHeight="257.0" prefWidth="328.0" text="Hi!&#10;I'm doing good.&#10;" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </center>

@@ -31,15 +31,25 @@ public void setType(String type) {
 
 protected String password;
 protected String type;
+protected String notes;
 
 public User()
 {}
+
+public String getNotes() {
+	return notes;
+}
+
+public void setNotes(String notes) {
+	this.notes = notes;
+}
 
 public User(String userId,String password,String type)
 {
 	this.userId= userId;
 	this.password= password;
 	this.type= type;
+	this.notes="Notes here.";
 }
 
 }

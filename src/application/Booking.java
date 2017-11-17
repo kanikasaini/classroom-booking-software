@@ -38,4 +38,13 @@ public class Booking implements Serializable {
 	public void setRoomNo(String roomNo) {
 		this.roomNo = roomNo;
 	}
+	@Override
+	public boolean equals(Object a)
+	{
+		Booking b = (Booking)a;
+		if(b.day.equalsIgnoreCase(this.day) && b.time.equals(this.time) && b.roomNo.equals(this.roomNo))
+			return true;
+		else
+			return false;
+	}
 }

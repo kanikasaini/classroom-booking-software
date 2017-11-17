@@ -55,9 +55,6 @@ public class MyBookings_AdminController {
 
 
 	public void initialize() throws IOException {
-        //Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/MyBookings_Admin.fxml"));
-        //Scene homepage = new Scene(rootHomepage);
-		//stage.setScene(homepage);
         makeList();
         tableView.setItems(bookinglist);
         roomColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("roomNo"));
@@ -74,39 +71,41 @@ public class MyBookings_AdminController {
 
         cancelColumn.setCellFactory(new Callback<TableColumn<Booking, Boolean>, TableCell<Booking, Boolean>>() {
             @Override public TableCell<Booking, Boolean> call(TableColumn<Booking, Boolean> BookingBooleanTableColumn) {
-              return new AddBookingCell(tableView);
+              return new CancelBookingCell(tableView);
             }
           });
 
-          //tableView.getColumns().setAll(roomColumn, dayColumn, timeColumn,  cancelColumn);
         tableView.setItems(bookinglist);
           tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-          //stage.setScene(new Scene(tableView));
-          //stage.show();
-
     }
 
-	private class AddBookingCell extends TableCell<Booking, Boolean> {
+	private class CancelBookingCell extends TableCell<Booking, Boolean> {
 	    // a button for adding a new Booking.
-	    final Button addButton       = new Button("Add");
+	    final Button cancelButton       = new Button("Cancel");
 	    // pads and centers the add button in the cell.
 	    final StackPane paddedButton = new StackPane();
 	    // records the y pos of the last button press so that the add Booking dialog can be shown next to the cell.
 	    final DoubleProperty buttonY = new SimpleDoubleProperty();
 
-	    AddBookingCell(final TableView table) {
+	    CancelBookingCell(final TableView table) {
 	      paddedButton.setPadding(new Insets(3));
-	      paddedButton.getChildren().add(addButton);
-	      addButton.setOnMousePressed(new EventHandler<MouseEvent>() {
+	      paddedButton.getChildren().add(cancelButton);
+	      cancelButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 	        @Override public void handle(MouseEvent mouseEvent) {
 	          buttonY.set(mouseEvent.getScreenY());
 	        }
 	      });
-	      addButton.setOnAction(new EventHandler<ActionEvent>() {
+	      cancelButton.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override public void handle(ActionEvent actionEvent) {
-	          showAddBookingDialog(table, buttonY.get());
+//	          showCancelBookingDialog(table, buttonY.get());
+
 	          table.getSelectionModel().select(getTableRow().getIndex());
+
+	          if (table.getSelectionModel().getSelectedItem() != null) {
+	             Booking b = (Booking) table.getSelectionModel().getSelectedItem();
+	             admin.cancelBooking(b);
+	          }
 	        }
 	      });
 	    }
@@ -122,19 +121,14 @@ public class MyBookings_AdminController {
 	      }
 	}
 
-
-	private void showAddBookingDialog(final TableView<Booking> table, double y) {
-	        // initialize the dialog.
-
-	      }
 	public void makeList() throws IOException
     {
-		System.out.println(admin.getUserId());
-		bookinglist = (ObservableList)admin.getBookings();
+		//System.out.println(admin.getUserId());
+		//bookinglist = (ObservableList)admin.getBookings();
 
-		//bookinglist= FXCollections.observableArrayList(
-		   //     new Booking("C21", "monday", "10:30", "11:00")
-		    //  );
+		bookinglist= FXCollections.observableArrayList(
+		       new Booking("C21", "monday", "10:30", "11:00")
+		      );
     }
 	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Admin.fxml"));

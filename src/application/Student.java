@@ -9,6 +9,12 @@ private Timetable timetable = new Timetable();
 private ArrayList<Course> coursesTaken = new ArrayList<Course>();
 private static ArrayList<Course> allCourses = new  ArrayList<Course>();
 private ArrayList<Request> 	requests= new ArrayList<Request>();
+private ArrayList<Booking> bookings = new ArrayList<Booking>();
+public void addBooking(Booking b)
+{
+	System.out.print("error");
+	bookings.add(b);
+}
 
 public Student(String userId, String password, String type)
 {
