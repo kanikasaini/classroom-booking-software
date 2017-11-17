@@ -14,6 +14,7 @@ public Request(String prefferedRoom, String purpose, String sentBy, int capacity
 		this.capacity = capacity;
 		this.state = 0;
 		this.time= start+"-"+end;
+		this.day= day;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 		dateSent = LocalDate.now();
 	}
@@ -21,7 +22,7 @@ public Request(String prefferedRoom, String purpose, String sentBy, int capacity
 public Request(String purpose, String sentBy, int capacity,String day, String start, String end) {
 	super();
 	this.purpose = purpose;
-	this.prefferedRoom = "any";
+	this.prefferedRoom = "ANY";
 	this.sentBy = sentBy;
 	this.capacity = capacity;
 	this.state = 0;
@@ -73,6 +74,10 @@ public String getPurpose() {
 	public void setDay(String day)
 	{
 		this.day= day;
+	}
+	public String getTime()
+	{
+		return time;
 	}
 private String purpose;
 private String prefferedRoom;
