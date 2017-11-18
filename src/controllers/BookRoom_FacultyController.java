@@ -81,9 +81,12 @@ public class BookRoom_FacultyController {
 					alert.setHeaderText("Room Not Available");
 					alert.setContentText("Please enter again");
 					alert.showAndWait();
-					Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+					Parent rootHomepage = fxmlLoader.load();
+					BookRoom_FacultyController usc= fxmlLoader.<BookRoom_FacultyController>getController();
+					usc.setUser(faculty);
 					Scene homepage = new Scene(rootHomepage);
-					((Stage)roomNo.getScene().getWindow()).setScene(homepage);
+					((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 		        }
 		        else
 		        {
@@ -99,9 +102,12 @@ public class BookRoom_FacultyController {
 					alert.setHeaderText("Booked Room Successfully");
 					alert.setContentText("Click OK to continue");
 					alert.showAndWait();
-					Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+					Parent rootHomepage = fxmlLoader.load();
+					BookRoom_FacultyController usc= fxmlLoader.<BookRoom_FacultyController>getController();
+					usc.setUser(faculty);
 					Scene homepage = new Scene(rootHomepage);
-					((Stage)roomNo.getScene().getWindow()).setScene(homepage);
+					((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 		        }
 
 		 	}
@@ -112,9 +118,12 @@ public class BookRoom_FacultyController {
 				alert.setHeaderText("Room Not Available");
 				alert.setContentText("Please enter again");
 				alert.showAndWait();
-				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+				Parent rootHomepage = fxmlLoader.load();
+				BookRoom_FacultyController usc= fxmlLoader.<BookRoom_FacultyController>getController();
+				usc.setUser(faculty);
 				Scene homepage = new Scene(rootHomepage);
-				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
+				((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 		 	}
 		}
 

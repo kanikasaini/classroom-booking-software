@@ -1,5 +1,6 @@
 package application;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.*;
 
@@ -20,7 +21,7 @@ public void addBooking(Booking b)
 	bookings.add(b);
 }
 
-public Student(String userId, String password, String type)
+public Student(String userId, String password, String type) throws IOException
 {
 	super(userId, password, type);
 	MonTimetable = new Timetable("","","","","","AP\nC21",".","Tut AP\nGp1,2,3,4\nLR1,LR2,S01,S01",".","","","","","","","","","","");;

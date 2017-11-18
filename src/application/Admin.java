@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.*;
 
+import controllers.RequestBooking_StudentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -131,15 +132,16 @@ try {
 }
 public void deleteRequest(Request request) throws Exception //method to delete request made by students
 {
-    File r = new File("database/requests"+request.getPurpose()+".txt");
+    File r = new File("database/requests/"+request.getPurpose()+".txt");
     r.delete();
     Student student = (Student)deserialize(request.getSentBy());
     student.setState(request.getPurpose(), -1);
     serialize(student);
+
 }
 public void acceptRequest(Request request) throws Exception
 {
-	File r = new File("database/requests"+request.getPurpose()+".txt");
+	File r = new File("database/requests/"+request.getPurpose()+".txt");
     r.delete();
     Student student = (Student)deserialize(request.getSentBy());
     student.setState(request.getPurpose(), +1);

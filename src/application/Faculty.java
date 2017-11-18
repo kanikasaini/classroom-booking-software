@@ -1,9 +1,10 @@
 package application;
+import java.io.IOException;
 import java.util.*;
 
 public class Faculty  extends User{
 
-public Faculty(String userId, String password, String type) {
+public Faculty(String userId, String password, String type) throws IOException {
 	super(userId, password, type);
 	}
 public Faculty()

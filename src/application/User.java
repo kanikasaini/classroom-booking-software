@@ -1,6 +1,14 @@
 package application;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
+
+import javax.imageio.ImageIO;
+
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
 
 public class User implements Serializable {
 
@@ -32,6 +40,24 @@ public void setType(String type) {
 protected String password;
 protected String type;
 protected String notes;
+protected transient Image image;
+protected String imageUrl;
+
+public Image getImage() {
+	return image;
+}
+
+public void setImage(Image image) {
+	this.image = image;
+}
+
+public String getImageUrl() {
+	return imageUrl;
+}
+
+public void setImageUrl(String imageUrl) {
+	this.imageUrl = imageUrl;
+}
 
 public User()
 {}
@@ -44,12 +70,15 @@ public void setNotes(String notes) {
 	this.notes = notes;
 }
 
-public User(String userId,String password,String type)
+public User(String userId,String password,String type) throws IOException
 {
 	this.userId= userId;
 	this.password= password;
 	this.type= type;
 	this.notes="Notes here.";
+	this.imageUrl= "database/bluebg.jpg";
+	BufferedImage bufferedImage = ImageIO.read(new File("database/bluebg.jpg"));
+    this.image = SwingFXUtils.toFXImage(bufferedImage, null);
 }
 
 }

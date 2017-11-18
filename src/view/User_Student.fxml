@@ -76,15 +76,22 @@
                               </Text>
                            </top>
                            <bottom>
-                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+
                            </bottom>
                            <center>
-                              <ImageView fitHeight="163.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                              <ImageView fx:id="imageView" fitHeight="163.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                                  <image>
                                     <Image url="@../../Pictures/thumbsup%20bitmoji.png" />
                                  </image>
                               </ImageView>
                            </center>
+                           <bottom>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#handleUploadButton" text="Upload Button" />
+                                 </children>
+                              </HBox>
+                           </bottom>
                         </BorderPane>
                      </left>
                      <center>

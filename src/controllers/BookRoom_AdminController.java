@@ -76,7 +76,6 @@ public class BookRoom_AdminController {
 	        in.close();
 	        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
 	        Room room = (Room)in.readObject();
-	       // System.out.println(room.getNumber());
 	        boolean flag= room.checkOverlap(day, start, end);
 	        if(flag==true)
 	        {
@@ -85,9 +84,12 @@ public class BookRoom_AdminController {
 				alert.setHeaderText("Room Not Available");
 				alert.setContentText("Please enter again");
 				alert.showAndWait();
-				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Admin.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Admin.fxml"));
+				Parent rootHomepage = fxmlLoader.load();
+				BookRoom_AdminController usc= fxmlLoader.<BookRoom_AdminController>getController();
+				usc.setUser(admin);
 				Scene homepage = new Scene(rootHomepage);
-				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
+				((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 	        }
 	        else
 	        {
@@ -103,9 +105,12 @@ public class BookRoom_AdminController {
 				alert.setHeaderText("Booked Room Successfully");
 				alert.setContentText("Click OK to continue");
 				alert.showAndWait();
-				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Admin.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Admin.fxml"));
+				Parent rootHomepage = fxmlLoader.load();
+				BookRoom_AdminController usc= fxmlLoader.<BookRoom_AdminController>getController();
+				usc.setUser(admin);
 				Scene homepage = new Scene(rootHomepage);
-				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
+				((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 	        }
 
 	 	}
@@ -116,9 +121,12 @@ public class BookRoom_AdminController {
 			alert.setHeaderText("Room Not Available");
 			alert.setContentText("Please enter again");
 			alert.showAndWait();
-			Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Admin.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/BookRoom_Admin.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			BookRoom_AdminController usc= fxmlLoader.<BookRoom_AdminController>getController();
+			usc.setUser(admin);
 			Scene homepage = new Scene(rootHomepage);
-			((Stage)roomNo.getScene().getWindow()).setScene(homepage);
+			((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 	 	}
 	}
 
