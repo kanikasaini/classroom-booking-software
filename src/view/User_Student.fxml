@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.User_StudentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#initializer" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.User_StudentController">
    <top>
       <MenuBar fx:id="mainNavBar" BorderPane.alignment="CENTER">
         <menus>
@@ -66,7 +66,7 @@
                      <left>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <top>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lavina Jain" BorderPane.alignment="CENTER">
+                              <Text fx:id="username" strokeType="OUTSIDE" strokeWidth="0.0" text="userId" BorderPane.alignment="CENTER">
                                  <BorderPane.margin>
                                     <Insets top="20.0" />
                                  </BorderPane.margin>
@@ -100,7 +100,7 @@
                               </Text>
                            </top>
                            <center>
-                              <TextArea prefHeight="257.0" prefWidth="328.0" text="Hi!&#10;I'm doing good.&#10;" BorderPane.alignment="CENTER" />
+                              <TextArea fx:id="notes" onMouseExited="#handleNotes" prefHeight="257.0" prefWidth="328.0" text="Hi!&#10;I'm doing good.&#10;" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </center>

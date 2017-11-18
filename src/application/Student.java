@@ -5,8 +5,8 @@ import java.util.*;
 
 public class Student extends User {
 
-private Timetable MonTimetable; 
-private Timetable TuesTimetable; 
+private Timetable MonTimetable;
+private Timetable TuesTimetable;
 private Timetable WedTimetable;
 private Timetable ThursTimetable;
 private Timetable FriTimetable;
@@ -28,10 +28,18 @@ public Student(String userId, String password, String type)
 	WedTimetable = new Timetable("","","","","","AP\nC21",".","","","CO\n",".","DM\nC21",".","Tut CO\nGp1,2,3,4\nLR1,LR2,S01,S01",".",".","Tut DM\nGp1\nS01",".","");
 	ThursTimetable = new Timetable("","","","","","AP\nC21",".","Lab AP\nGp1,2,3,4\nL21,L22,L23",".","","","","","","",".","CO\nC21",".","");
 	FriTimetable = new Timetable("","","","","","","",".","DM\nC21",".","","","","","",".","Tut DM\nGp2,3,4\nLR1,LR2,LR3",".","");
-	
+
 	//need to read from file
 	coursesTaken = null;
 	allCourses= null;
+}
+public void setState(String purpose, int state)
+{
+	for(int i=0; i<requests.size(); i++)
+	{
+		if(requests.get(i).getPurpose().equals(purpose))
+			requests.get(i).setState(state);
+	}
 }
 
 public void addRequest(Request r) throws Exception

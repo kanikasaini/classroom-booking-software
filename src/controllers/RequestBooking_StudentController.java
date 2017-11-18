@@ -99,6 +99,7 @@ public class RequestBooking_StudentController {
 	        	Request b = new Request(room.getNumber(), purp, student.getUserId(), c,day, start, end);
 	        	student.addRequest(b);
 	        	serialize(student);
+	        	serialize(b);
 	        	Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Classroom Booking System");
 				alert.setHeaderText("Made Request Successfully");
@@ -114,6 +115,7 @@ public class RequestBooking_StudentController {
 	 			Request b = new Request( purp, student.getUserId(), c, day, start, end);
 	        	student.addRequest(b);
 	        	serialize(student);
+	        	serialize(b);
 	        	Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Classroom Booking System");
 				alert.setHeaderText("Made Request Successfully");
@@ -148,7 +150,17 @@ public class RequestBooking_StudentController {
         out.close();
     }
 	}
-
+	public static void serialize(Request req) throws IOException
+	{
+    ObjectOutputStream out = null;
+    try {
+        out = new ObjectOutputStream(new FileOutputStream("database/requests/" + req.getPurpose()+".txt"));
+        out.writeObject(req);
+    } finally
+    {
+        out.close();
+    }
+	}
 
 
  @FXML protected void handleHomeButton(ActionEvent event) throws Exception {

@@ -73,7 +73,6 @@ public class BookRoom_FacultyController {
 		        in.close();
 		        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
 		        Room room = (Room)in.readObject();
-		       // System.out.println(room.getNumber());
 		        boolean flag= room.checkOverlap(day, start, end);
 		        if(flag==true)
 		        {

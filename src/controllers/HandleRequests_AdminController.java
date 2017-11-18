@@ -52,7 +52,7 @@ public class HandleRequests_AdminController {
 		this.admin= (Admin)a;
 	}
 
-	public void initialize() throws IOException {
+	public void initializer() throws Exception {
         makeList();
         tableView.setItems(requestlist);
         roomColumn.setCellValueFactory(new PropertyValueFactory<Request, String>("prefferedRoom"));
@@ -117,7 +117,12 @@ public class HandleRequests_AdminController {
 
 	          if (table.getSelectionModel().getSelectedItem() != null) {
 	             Request b = (Request) table.getSelectionModel().getSelectedItem();
-	             //admin.addRequest(b);
+	             try {
+					admin.deleteRequest(b);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	          }
 	        }
 	      });
@@ -159,7 +164,12 @@ public class HandleRequests_AdminController {
 
 	          if (table.getSelectionModel().getSelectedItem() != null) {
 	             Request b = (Request) table.getSelectionModel().getSelectedItem();
-	             //admin.addRequest(b);
+	             try {
+					admin.acceptRequest(b);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	          }
 	        }
 	      });
@@ -176,14 +186,10 @@ public class HandleRequests_AdminController {
 	      }
 	}
 
-	public void makeList() throws IOException
+	public void makeList() throws Exception
     {
-		//System.out.println(admin.getUserId());
-		//requestlist = (ObservableList)admin.getBookings();
-//String prefferedRoom, String purpose, String sentBy, int capacity, String day, String start, String end
-		requestlist= FXCollections.observableArrayList(
-		       new Request("C01", "my life", "kanika", 40, "MONDAY", "10:00", "11:00")
-		      );
+		requestlist = FXCollections.observableArrayList(admin.getPendingRequests());
+
     }
 	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Admin.fxml"));

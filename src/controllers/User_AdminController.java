@@ -32,11 +32,11 @@ public class User_AdminController {
 		{
 			this.admin= (Admin)a;
 		}
-
-	@FXML public void initialize() throws IOException
+		@FXML public void initializer() throws IOException
 		{
-			//System.out.println(admin.getNotes());
-			notes.setText("notes here");
+			notes.setText(admin.getNotes());
+			username.setText(admin.getUserId());
+			System.out.println("initializer called");
 		}
 	 @FXML protected void handleAvailableRoomsButton(ActionEvent event) throws Exception {
 

@@ -11,10 +11,25 @@ public Faculty()
 	super();
 }
 
+
+
+public ArrayList<Booking> getBookings() {
+	return bookings;
+}
+public void setBookings(ArrayList<Booking> bookings) {
+	this.bookings = bookings;
+}
+
 private ArrayList<Booking> bookings = new ArrayList<Booking>();
 public void addBooking(Booking b)
 {
-	System.out.print("error");
 	bookings.add(b);
+	System.out.println("booking added");
+	}
+
+public void cancelBooking(Booking b)
+{
+	bookings.remove(b);
+
 }
 }
