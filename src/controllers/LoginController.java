@@ -36,8 +36,8 @@ public class LoginController {
 	@FXML protected void handleSignupButtonAction(ActionEvent event) throws Exception {
 			String email, password;
 			email = signupEmail.getText();
-			//if(email.endsWith("@iiitd.ac.in"))
-			//{
+			if(email.endsWith("@iiitd.ac.in"))
+			{
 				password = signupPassword.getText();
 			if(adminType.isSelected())
 				signUp(email, password, "Admin");
@@ -53,8 +53,8 @@ public class LoginController {
 			alert.setHeaderText("You have successfully signed up!");
 			alert.setContentText("Please login to continue.");
 			alert.showAndWait();
-			//}
-			/*else
+			}
+			else
 			{
 				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/Signin.fxml"));
 				Scene homepage = new Scene(rootHomepage);
@@ -65,7 +65,7 @@ public class LoginController {
 				alert.setContentText("Please try again.");
 				alert.showAndWait();
 			}
-			*/
+
 	}
 	@FXML protected void addToToggleGroup(ActionEvent event) throws Exception {
 		adminType.setToggleGroup(group);

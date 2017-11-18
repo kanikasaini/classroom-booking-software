@@ -78,7 +78,10 @@ public class MyBookings_FacultyController {
 
 	    }
 
-		private class CancelBookingCell extends TableCell<Booking, Boolean> { /method which gets called when admin presses cancel button
+		private class CancelBookingCell extends TableCell<Booking, Boolean> {
+			//method which gets called when admin presses cancel button
+
+
 		    // a button for adding a new Booking.
 		    final Button cancelButton       = new Button("Cancel");
 		    // pads and centers the add button in the cell.
