@@ -89,7 +89,10 @@ public class RequestBooking_StudentController {
 				alert.setHeaderText("Room Not Available");
 				alert.setContentText("Please choose another one.");
 				alert.showAndWait();
-				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/RequestBooking_Student.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/RequestBooking_Student.fxml"));
+				Parent rootHomepage = fxmlLoader.load();
+				RequestBooking_StudentController usc= fxmlLoader.<RequestBooking_StudentController>getController();
+				usc.setUser(student);
 				Scene homepage = new Scene(rootHomepage);
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 	        }
@@ -105,7 +108,10 @@ public class RequestBooking_StudentController {
 				alert.setHeaderText("Made Request Successfully");
 				alert.setContentText("Click OK to continue");
 				alert.showAndWait();
-				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/RequestBooking_Student.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/RequestBooking_Student.fxml"));
+				Parent rootHomepage = fxmlLoader.load();
+				RequestBooking_StudentController usc= fxmlLoader.<RequestBooking_StudentController>getController();
+				usc.setUser(student);
 				Scene homepage = new Scene(rootHomepage);
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 	        }
@@ -121,7 +127,10 @@ public class RequestBooking_StudentController {
 				alert.setHeaderText("Made Request Successfully");
 				alert.setContentText("Click OK to continue");
 				alert.showAndWait();
-				Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/RequestBooking_Student.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/RequestBooking_Student.fxml"));
+				Parent rootHomepage = fxmlLoader.load();
+				RequestBooking_StudentController usc= fxmlLoader.<RequestBooking_StudentController>getController();
+				usc.setUser(student);
 				Scene homepage = new Scene(rootHomepage);
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 	 		}
@@ -134,7 +143,10 @@ public class RequestBooking_StudentController {
 			alert.setHeaderText("Room Not Available");
 			alert.setContentText("Please enter again");
 			alert.showAndWait();
-			Parent rootHomepage = FXMLLoader.load(getClass().getResource("../view/BookRoom_Faculty.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/RequestBooking_Student.fxml"));
+			Parent rootHomepage = fxmlLoader.load();
+			RequestBooking_StudentController usc= fxmlLoader.<RequestBooking_StudentController>getController();
+			usc.setUser(student);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 	 	}

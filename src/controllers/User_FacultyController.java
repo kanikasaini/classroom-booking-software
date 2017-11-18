@@ -1,12 +1,20 @@
 package controllers;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
+import javax.imageio.ImageIO;
+
+import com.sun.javafx.logging.Logger;
+
 import application.Admin;
 import application.Faculty;
 import application.User;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +26,11 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class User_FacultyController {
@@ -27,6 +38,7 @@ public class User_FacultyController {
 	 @FXML private Text username;
 
 	 private Faculty faculty;
+	 @FXML private ImageView imageView;
 	@FXML private TextArea notes;
 
 		protected void setUser(User a)
@@ -38,6 +50,9 @@ public class User_FacultyController {
 			{
 				notes.setText(faculty.getNotes());
 				username.setText(faculty.getUserId());
+				BufferedImage bufferedImage = ImageIO.read(new File(faculty.getImageUrl()));
+	            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+				imageView.setImage(image);
 				System.out.println("initializer called");
 			}
 		 @FXML protected void handleNotes(MouseEvent event) throws Exception {
@@ -91,6 +106,29 @@ public class User_FacultyController {
 			usc.setUser(faculty);
 			Scene homepage = new Scene(rootHomepage);
 			((Stage)username.getScene().getWindow()).setScene(homepage);
+	 }
+
+	 @FXML protected void handleUploadButton(ActionEvent e) throws IOException {
+		 FileChooser fileChooser = new FileChooser();
+
+         //Set extension filter
+         FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
+         FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
+         fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+
+         //Show open file dialog
+         File file = fileChooser.showOpenDialog(null);
+
+         try {
+             BufferedImage bufferedImage = ImageIO.read(file);
+             faculty.setImageUrl("database/"+file.getName());
+             Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+             faculty.setImage(image);
+             imageView.setImage(image);
+             serialize(faculty);
+         } catch (IOException ex) {
+         }
+
 	 }
 	 @FXML protected void handleLogoutButton(ActionEvent event) throws Exception {
 		 	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/Signin.fxml"));
