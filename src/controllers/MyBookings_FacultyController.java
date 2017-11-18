@@ -139,8 +139,6 @@ public class MyBookings_FacultyController {
 
 		public void makeList() throws IOException
 	    {
-			//System.out.println(admin.getUserId());
-			//if(faculty.getBookings()!=null)
 			System.out.println(faculty.getUserId());
 			bookinglist = FXCollections.observableArrayList(faculty.getBookings());
 	    }

@@ -119,6 +119,12 @@ public class HandleRequests_AdminController {
 	             Request b = (Request) table.getSelectionModel().getSelectedItem();
 	             try {
 					admin.deleteRequest(b);
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/HandleRequests_Admin.fxml"));
+					Parent rootHomepage = fxmlLoader.load();
+					HandleRequests_AdminController usc= fxmlLoader.<HandleRequests_AdminController>getController();
+					usc.setUser(admin);
+					Scene homepage = new Scene(rootHomepage);
+					((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -158,7 +164,6 @@ public class HandleRequests_AdminController {
 	      });
 	      acceptButton.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override public void handle(ActionEvent actionEvent) {
-//	          showCancelBookingDialog(table, buttonY.get());
 
 	          table.getSelectionModel().select(getTableRow().getIndex());
 
@@ -166,6 +171,12 @@ public class HandleRequests_AdminController {
 	             Request b = (Request) table.getSelectionModel().getSelectedItem();
 	             try {
 					admin.acceptRequest(b);
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/HandleRequests_Admin.fxml"));
+					Parent rootHomepage = fxmlLoader.load();
+					HandleRequests_AdminController usc= fxmlLoader.<HandleRequests_AdminController>getController();
+					usc.setUser(admin);
+					Scene homepage = new Scene(rootHomepage);
+					((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
