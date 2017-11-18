@@ -99,7 +99,6 @@ public void BookRoom(Request request, Student student) throws IOException, Class
         	room.addBookedSlot(day, start, end);
         	Booking b = new Booking(room.getNumber(), day, start, end);
         	this.addBooking(b);
-        	student.addBooking(b);
         	serialize(room);
         	serialize(this);
         	Alert alert = new Alert(AlertType.INFORMATION);

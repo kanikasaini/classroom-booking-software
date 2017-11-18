@@ -2,15 +2,26 @@ package controllers;
 
 import java.io.IOException;
 
+import application.Booking;
+import application.Request;
 import application.Student;
 import application.User;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class MyBookings_StudentController {
 	private Student student;
@@ -20,6 +31,31 @@ public class MyBookings_StudentController {
 		this.student= (Student)a;
 	}
 	@FXML private Label myBookingsLabel;
+	@FXML private TableView<Request> tableView;
+    @FXML private TableColumn<Request, String> roomColumn;
+    @FXML private TableColumn<Request, String> dayColumn;
+    @FXML private TableColumn<Request, String> timeColumn;
+    @FXML private TableColumn<Request, String> purposeColumn;
+    @FXML private TableColumn<Request, Integer> stateColumn;
+    private ObservableList<Request> requestlist = FXCollections.observableArrayList();
+
+	public void makeList() throws IOException
+    {
+		System.out.println(student.getUserId());
+		requestlist = FXCollections.observableArrayList(student.getRequests());
+    }
+	public void initializer() throws IOException {
+        makeList();
+        tableView.setItems(requestlist);
+        roomColumn.setCellValueFactory(new PropertyValueFactory<Request, String>("prefferedRoom"));
+    	dayColumn.setCellValueFactory(new PropertyValueFactory<Request, String>("day"));
+        timeColumn.setCellValueFactory(new PropertyValueFactory<Request, String>("time"));
+        purposeColumn.setCellValueFactory(new PropertyValueFactory<Request, String>("purpose"));
+        stateColumn.setCellValueFactory(new PropertyValueFactory<Request,Integer>("state"));
+        tableView.setItems(requestlist);
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+    }
 
 	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Student.fxml"));

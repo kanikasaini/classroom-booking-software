@@ -103,7 +103,7 @@ public class CoursesController {
           //tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
     }
-    
+
     private class AddBookingCell extends TableCell<Course, Boolean> {
 	    // a button for adding a new Booking.
 	    final Button addButton       = new Button("Add");
@@ -126,11 +126,11 @@ public class CoursesController {
 	          //tableView.getSelectionModel().select(getTableRow().getIndex());
 	          //System.out.println(tableView.getSelectionModel().select(getTableRow().getIndex()));
 	          //TablePosition tablePosition = (TablePosition) addButton.get(0);
+
 	        	ObservableList<Integer> p = tableView.getSelectionModel().getSelectedIndices()/*.getSelectedItems()*/;
 	        	int z = p.get(0);
 	        	//System.out.println(z);
 	        	//System.out.println(Arrays.asList(rowToCourse));
-	          
 
 	        }
 	      });
@@ -152,8 +152,8 @@ public class CoursesController {
 	        // initialize the dialog.
 
 	      }
-    
-    
+
+
     @FXML protected void onClickingSearch(ActionEvent event) throws Exception {
 		String word = searchWord.getText();
 		//System.out.println(word);
@@ -179,7 +179,7 @@ public class CoursesController {
 		}
 		tableView.setItems(searchCourseList);
 	 }
-    
+
 
 
 
@@ -199,7 +199,7 @@ public class CoursesController {
         	}
         	//System.out.println(allTimings);
         	String[] allTimingsArray = allTimings.split("\\$");
-        	
+
         	System.out.println(Arrays.toString(allTimingsArray));
 
         	for(int k=0;k<allTimingsArray.length;k++) {
