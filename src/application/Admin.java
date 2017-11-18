@@ -16,16 +16,17 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+// Admin class
 public class Admin extends User {
 
-private ArrayList<Booking> bookings = new ArrayList<Booking>();
-private ArrayList<Request> pendingRequests= new ArrayList<Request>();
+private ArrayList<Booking> bookings = new ArrayList<Booking>(); //Hold details of room bookings made by admin
+private ArrayList<Request> pendingRequests= new ArrayList<Request>(); // Hold the requests made by students to book room
 
-public Admin()
+public Admin() //Constructor
 {
 	super();
 }
-public Admin(String userId,String password,String type) throws Exception
+public Admin(String userId,String password,String type) throws Exception  //Reads admin details from file
 {
 	super(userId, password, type);
 	 ObjectInputStream in = null;
@@ -48,7 +49,7 @@ public ArrayList<Booking> getBookings() {
 public void setBookings(ArrayList<Booking> bookings)  {
 	this.bookings = bookings;
 }
-public ArrayList<Request> getPendingRequests()throws Exception {
+public ArrayList<Request> getPendingRequests()throws Exception { //Read from file to get pending requests
 	pendingRequests= new ArrayList<Request>();
 	ObjectInputStream in = null;
     Request r;
@@ -67,7 +68,7 @@ public ArrayList<Request> getPendingRequests()throws Exception {
 public void setPendingRequests(ArrayList<Request> pendingRequests) {
 	this.pendingRequests = pendingRequests;
 }
-public void BookRoom(Request request, Student student) throws IOException, ClassNotFoundException
+public void BookRoom(Request request, Student student) throws IOException, ClassNotFoundException //Method to book room, adds data to file
 {
 	String roomNumber = request.getPrefferedRoom();
  	String day = request.getDay();
@@ -83,7 +84,7 @@ public void BookRoom(Request request, Student student) throws IOException, Class
         in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
         Room room = (Room)in.readObject();
        // System.out.println(room.getNumber());
-        boolean flag= room.checkOverlap(day, start, end);
+        boolean flag= room.checkOverlap(day, start, end); //If timings of Booking overlap with already existing booking then throw alert, else book room
         if(flag==true)
         {
         	Alert alert = new Alert(AlertType.ERROR);
@@ -128,7 +129,7 @@ try {
     out.close();
 }
 }
-public void deleteRequest(Request request) throws Exception
+public void deleteRequest(Request request) throws Exception //method to delete request made by students
 {
     File r = new File("database/requests"+request.getPurpose()+".txt");
     r.delete();

@@ -31,6 +31,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.text.Text;
 
+//controls Available Rooms page for Admin
 
 public class AvailableRooms_AdminController {
 	@FXML private TextField  capacity;
@@ -41,7 +42,7 @@ public class AvailableRooms_AdminController {
 	{
 		this.admin= (Admin)a;
 	}
-    public void initialize() {
+    public void initialize() { //first method 
         List<String> list = new ArrayList<String>();
         for(int i=8;i<=19;i++)
         {
@@ -62,7 +63,7 @@ public class AvailableRooms_AdminController {
 
 	@FXML private DatePicker date;
 
-	@FXML protected void handleCheckButtonAction(ActionEvent event) throws Exception {
+	@FXML protected void handleCheckButtonAction(ActionEvent event) throws Exception { //method which executes when check availability button is clicked
 		 	String roomNumber = roomNo.getValue();
 		 	LocalDate now = date.getValue();
 		 	String day = now.getDayOfWeek().name();
@@ -77,7 +78,7 @@ public class AvailableRooms_AdminController {
 		        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
 		        Room room = (Room)in.readObject();
 
-		        boolean flag= room.checkOverlap(day, start, end);
+		        boolean flag= room.checkOverlap(day, start, end); //if timings overlap with existing booking, show alert that room unavailable, else show alert that room is available
 		        if(flag==true)
 		        {
 		        	Alert alert = new Alert(AlertType.ERROR);
@@ -114,6 +115,8 @@ public class AvailableRooms_AdminController {
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 		 	}
 		}
+	
+	//GUI interconnection
 	@FXML private MenuBar mainNavBar;
 	@FXML private Button checkBtn;
 

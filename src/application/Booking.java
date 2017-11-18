@@ -2,6 +2,8 @@ package application;
 
 import java.io.Serializable;
 
+//class to create booking objects
+
 public class Booking implements Serializable {
 
 	private String day;
@@ -39,7 +41,7 @@ public class Booking implements Serializable {
 		this.roomNo = roomNo;
 	}
 	@Override
-	public boolean equals(Object a)
+	public boolean equals(Object a) //checks if booking overlaps with existing booking
 	{
 		Booking b = (Booking)a;
 		if(b.day.equalsIgnoreCase(this.day) && b.time.equals(this.time) && b.roomNo.equals(this.roomNo))
