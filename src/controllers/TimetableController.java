@@ -23,6 +23,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+//class which controls timtable page of student
+
 public class TimetableController {
 	
 	@FXML private TableView<Timetable> tableView;
@@ -75,7 +77,7 @@ public class TimetableController {
         tableView.setItems(dayslist);
     }
     
-    public void makeList() throws IOException {
+    public void makeList() throws IOException { //method to populate timetable
     	//Timetable Monday = new Timetable(".","Tut M3\nGp1\nLR1","." , "NT\nC12","." , "AP\nC21","." , "Tut AP\nGp1,2,3,4\nLR1,LR2,S01.S02",".");
     	Timetable Monday = new Timetable("","","","","","AP\nC21",".","Tut AP\nGp1,2,3,4\nLR1,LR2,S01,S01",".","","","","","","","","","","");
     	Timetable Tuesday = new Timetable("","","","","","","","","","CO\nC21",".","DM\nC21",".","","","","","","");
@@ -97,6 +99,8 @@ public class TimetableController {
 	{
 		this.student= (Student)a;
 	}
+	
+	//GUI interconnection
 	@FXML private Label timetableLabel;
 
 	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {

@@ -36,7 +36,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-
+//class which handles the my bookings page of faculty
 public class MyBookings_FacultyController {
 
 	 @FXML private Label myBookingsLabel;
@@ -52,7 +52,7 @@ public class MyBookings_FacultyController {
 			this.faculty= (Faculty)a;
 		}
 
-	 public void initializer() throws IOException {
+	 public void initializer() throws IOException { //first method, gets called itself
 	        makeList();
 	        tableView.setItems(bookinglist);
 	        roomColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("roomNo"));
@@ -78,7 +78,7 @@ public class MyBookings_FacultyController {
 
 	    }
 
-		private class CancelBookingCell extends TableCell<Booking, Boolean> {
+		private class CancelBookingCell extends TableCell<Booking, Boolean> { /method which gets called when admin presses cancel button
 		    // a button for adding a new Booking.
 		    final Button cancelButton       = new Button("Cancel");
 		    // pads and centers the add button in the cell.
@@ -167,6 +167,7 @@ public class MyBookings_FacultyController {
             out.close();
         }
     	}
+		//GUI interconnection
 		 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Faculty.fxml"));
 				Parent rootHomepage = fxmlLoader.load();

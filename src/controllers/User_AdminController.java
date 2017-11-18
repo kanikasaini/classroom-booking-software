@@ -28,6 +28,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+//class which controls Homepage of Admin
 public class User_AdminController {
 
 	@FXML private Menu availableRooms;

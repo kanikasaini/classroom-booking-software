@@ -5,12 +5,14 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.*;
 
+//c;ass to create Room objects
+
 public class Room implements Serializable {
 
 public String getNumber() {
 		return number;
 	}
-	public void setNumber(String number) {
+	public void setNumber(String number) { //getters setters
 		this.number = number;
 	}
 	public int getCapacity() {
@@ -48,7 +50,7 @@ public String getNumber() {
 		this.number = number;
 		this.capacity = capacity;
 	}
-	public boolean checkOverlap(String day, String start1, String end1)
+	public boolean checkOverlap(String day, String start1, String end1) //checks if their is overlap between two booking times
 	{
 		boolean flag= false;
 		for(int i=0; i<bookedSlots.size(); i++)
@@ -70,6 +72,7 @@ public String getNumber() {
 		}
 		return flag;
 	}
+	//tells which time is greater, used for function checkOverlap
 	public int greater(String start, String end) //returns 1 if start>end, returns 0 if start<=end
 	{
 		String[] start1 = start.split("");

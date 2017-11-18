@@ -38,7 +38,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-
+//class which handles the my bookings page of admin
 
 public class MyBookings_AdminController {
 
@@ -58,7 +58,7 @@ public class MyBookings_AdminController {
 		this.admin= (Admin)a;
 	}
 
-	public void initializer() throws IOException {
+	public void initializer() throws IOException { //first method, gets called itself
         makeList();
         tableView.setItems(bookinglist);
         roomColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("roomNo"));
@@ -82,7 +82,7 @@ public class MyBookings_AdminController {
 
     }
 
-	private class CancelBookingCell extends TableCell<Booking, Boolean> {
+	private class CancelBookingCell extends TableCell<Booking, Boolean> { //method which gets called when admin presses cancel button
 	    final Button cancelButton       = new Button("Cancel");
 	    // pads and centers the add button in the cell.
 	    final StackPane paddedButton = new StackPane();
@@ -146,7 +146,7 @@ public class MyBookings_AdminController {
 		bookinglist = FXCollections.observableArrayList(admin.getBookings());
     }
 
-	public static void serialize(Room pl) throws IOException
+	public static void serialize(Room pl) throws IOException //write to database
 	{
     ObjectOutputStream out = null;
     try {
@@ -158,7 +158,7 @@ public class MyBookings_AdminController {
     }
 	}
 
-	public static void serialize(User user) throws IOException
+	public static void serialize(User user) throws IOException //write to database
 	{
     ObjectOutputStream out = null;
     try {
@@ -169,6 +169,7 @@ public class MyBookings_AdminController {
         out.close();
     }
 	}
+	//GUI Interconnection
 	@FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Admin.fxml"));
 		Parent rootHomepage = fxmlLoader.load();

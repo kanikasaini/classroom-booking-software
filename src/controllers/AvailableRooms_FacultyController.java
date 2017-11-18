@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+//file which controls the available rooms page of faculty object
 public class AvailableRooms_FacultyController {
 
 	@FXML private MenuBar mainNavBar;
@@ -38,7 +39,7 @@ public class AvailableRooms_FacultyController {
 	{
 		this.faculty= (Faculty)a;
 	}
-	public void initialize() {
+	public void initialize() { //first method
         List<String> list = new ArrayList<String>();
         for(int i=8;i<=19;i++)
         {
@@ -59,7 +60,7 @@ public class AvailableRooms_FacultyController {
 
 	@FXML private DatePicker date;
 
-	@FXML protected void handleCheckButtonAction(ActionEvent event) throws Exception {
+	@FXML protected void handleCheckButtonAction(ActionEvent event) throws Exception { //method which executes when check availability button is clicked
 		 	String roomNumber = roomNo.getValue();
 		 	LocalDate now = date.getValue();
 		 	String day = now.getDayOfWeek().name();
@@ -110,6 +111,8 @@ public class AvailableRooms_FacultyController {
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 		 	}
 		}
+	
+	//GUI interconnection
 	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Faculty.fxml"));
 			Parent rootHomepage = fxmlLoader.load();

@@ -26,7 +26,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-
+//file which controls the available rooms page of student object
 public class AvailableRooms_StudentController {
 		private Student student;
 		@FXML private Label checkAvailabilityLabel;
@@ -59,7 +59,7 @@ public class AvailableRooms_StudentController {
 	        timeEnd.setItems(obList);
 	    }
 
-		@FXML protected void handleCheckButtonAction(ActionEvent event) throws Exception {
+		@FXML protected void handleCheckButtonAction(ActionEvent event) throws Exception { //method which executes when check availability button is clicked
 		 	String roomNumber = roomNo.getValue();
 		 	LocalDate now = date.getValue();
 		 	String day = now.getDayOfWeek().name();
@@ -110,6 +110,8 @@ public class AvailableRooms_StudentController {
 				((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 		 	}
 		}
+		
+		//GUI interconnection
 	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Student.fxml"));
 			Parent rootHomepage = fxmlLoader.load();

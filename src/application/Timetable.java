@@ -2,6 +2,8 @@ package application;
 
 import java.io.Serializable;
 
+//class to create Timetable object which is essentially the schedule of a single day
+
 public class Timetable implements Serializable {
 	private String eightThirtyNine;
 	private String nineNineThirty;

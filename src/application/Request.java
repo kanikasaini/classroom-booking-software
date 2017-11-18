@@ -4,9 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+//class to create object of requestbooking which contains the details of the request made by student object
+
 public class Request implements Serializable{
 
-public Request(String prefferedRoom, String purpose, String sentBy, int capacity, String day, String start, String end) {
+public Request(String prefferedRoom, String purpose, String sentBy, int capacity, String day, String start, String end) { //constructor
 		super();
 		this.purpose = purpose;
 		this.prefferedRoom = prefferedRoom;
@@ -32,7 +34,7 @@ public Request(String purpose, String sentBy, int capacity,String day, String st
 }
 
 
-public String getPurpose() {
+public String getPurpose() { //getters setters
 		return purpose;
 	}
 	public void setPurpose(String purpose) {

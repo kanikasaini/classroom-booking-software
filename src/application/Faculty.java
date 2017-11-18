@@ -2,6 +2,8 @@ package application;
 import java.io.IOException;
 import java.util.*;
 
+//class to create faculty object
+
 public class Faculty  extends User{
 
 public Faculty(String userId, String password, String type) throws IOException {

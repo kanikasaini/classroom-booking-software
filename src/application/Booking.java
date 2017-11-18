@@ -10,14 +10,14 @@ public class Booking implements Serializable {
 	private String time;
 	private String roomNo;
 
-	public Booking(String roomNo, String day, String start, String end)
+	public Booking(String roomNo, String day, String start, String end) //constructor
 	{
 		this.roomNo= roomNo;
 		this.day= day;
 		this.time = start+"-"+end;
 	}
 
-	public String getDay() {
+	public String getDay() { //getters and setters
 		return day;
 	}
 

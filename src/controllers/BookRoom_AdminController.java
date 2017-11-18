@@ -29,6 +29,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+
+//Class which handles book room page of Admin object
 public class BookRoom_AdminController {
 
 	@FXML private MenuBar mainNavBar;
@@ -44,7 +46,7 @@ public class BookRoom_AdminController {
 		System.out.println(a.getPassword());
 	}
 
-    public void initialize() {
+    public void initialize() { //first method, gets called itself
         List<String> list = new ArrayList<String>();
         for(int i=8;i<=19;i++)
         {
@@ -63,7 +65,7 @@ public class BookRoom_AdminController {
         timeEnd.setItems(obList);
     }
 
-    @FXML protected void handleBookButtonAction(ActionEvent event) throws Exception {
+    @FXML protected void handleBookButtonAction(ActionEvent event) throws Exception { //method that executes when book room is pressed
 	 	String roomNumber = roomNo.getValue();
 	 	LocalDate now = date.getValue();
 	 	String day = now.getDayOfWeek().name();
@@ -71,12 +73,12 @@ public class BookRoom_AdminController {
 	 	String end= timeEnd.getValue();
 	 	try
 	 	{
-	 		ObjectInputStream in = null;
+	 		ObjectInputStream in = null; //tries to read room from database
 	        in = new ObjectInputStream(new FileInputStream("database/rooms/"+roomNumber+".txt"));
 	        in.close();
 	        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
 	        Room room = (Room)in.readObject();
-	        boolean flag= room.checkOverlap(day, start, end);
+	        boolean flag= room.checkOverlap(day, start, end); //if timings entered by user overlap with existing bookings in database, throw an alert saying room not available
 	        if(flag==true)
 	        {
 	        	Alert alert = new Alert(AlertType.ERROR);
@@ -92,7 +94,7 @@ public class BookRoom_AdminController {
 				((Stage)mainNavBar.getScene().getWindow()).setScene(homepage);
 	        }
 	        else
-	        {
+	        { //else book room and add to database and show alert saying room booked
 	        	room.addBookedSlot(day, start, end);
 	        	Booking b = new Booking(room.getNumber(), day, start, end);
 	        	System.out.println(admin.getType());
@@ -114,7 +116,7 @@ public class BookRoom_AdminController {
 	        }
 
 	 	}
-	 	catch(FileNotFoundException e)
+	 	catch(FileNotFoundException e) //exception if room doesnt exist
 	 	{
 	 		Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Classroom Booking System");
@@ -130,7 +132,7 @@ public class BookRoom_AdminController {
 	 	}
 	}
 
-    	public static void serialize(Room pl) throws IOException
+    	public static void serialize(Room pl) throws IOException //write to file
     	{
         ObjectOutputStream out = null;
         try {
@@ -141,7 +143,7 @@ public class BookRoom_AdminController {
             out.close();
         }
     	}
-    	public static void serialize(User user) throws IOException
+    	public static void serialize(User user) throws IOException //write to file
     	{
         ObjectOutputStream out = null;
         try {
@@ -152,6 +154,7 @@ public class BookRoom_AdminController {
             out.close();
         }
     	}
+    	//GUI interconnection
 	 @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Admin.fxml"));
 			Parent rootHomepage = fxmlLoader.load();

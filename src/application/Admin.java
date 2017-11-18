@@ -148,7 +148,7 @@ public void acceptRequest(Request request) throws Exception
     this.BookRoom(request, student);
     serialize(student);
 }
-public static void serialize(User user) throws IOException
+public static void serialize(User user) throws IOException //method to write to file
 {
 	ObjectOutputStream out = null;
     try {
@@ -159,7 +159,7 @@ public static void serialize(User user) throws IOException
         out.close();
     }
 }
-public static User deserialize(String userId) throws Exception
+public static User deserialize(String userId) throws Exception //method to read from file
 {
     ObjectInputStream in = null;
     User user= null;

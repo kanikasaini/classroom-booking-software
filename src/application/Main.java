@@ -16,7 +16,7 @@ public class Main extends Application {
 	        Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.show();
+			primaryStage.show(); //opens up the signin page
 	    }
 		 catch(Exception e) {
 			e.printStackTrace();

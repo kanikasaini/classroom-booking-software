@@ -30,7 +30,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
+//class which controls Homepage of Student
 public class User_StudentController {
 
 	@FXML private MenuBar mainNavBar;

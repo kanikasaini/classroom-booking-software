@@ -78,11 +78,11 @@ public class AvailableRooms_AdminController {
 		        in = new ObjectInputStream(new FileInputStream("database/bookedRooms/"+roomNumber+".txt"));
 		        Room room = (Room)in.readObject();
 
-		        boolean flag= room.checkOverlap(day, start, end); //if timings overlap with existing booking, show alert that room unavailable, else show alert that room is available
+		        boolean flag= room.checkOverlap(day, start, end); //if timings overlap with existing booking, 
 		        if(flag==true)
 		        {
-		        	Alert alert = new Alert(AlertType.ERROR);
-					alert.setTitle("Classroom Booking System");
+		        	Alert alert = new Alert(AlertType.ERROR);    //show alert that room unavailable, else show alert that room is available
+					alert.setTitle("Classroom Booking System");	// throws exception if room does not exist in database
 					alert.setHeaderText("Room Not Available");
 					alert.setContentText("Please enter again");
 					alert.showAndWait();

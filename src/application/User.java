@@ -10,6 +10,8 @@ import javax.imageio.ImageIO;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
+//class to create user object. admin faculty and student extend user class
+
 public class User implements Serializable {
 
 protected String userId;

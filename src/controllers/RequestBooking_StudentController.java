@@ -31,7 +31,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-
+//class which controls Request Booking page of Student
 public class RequestBooking_StudentController {
 	private Student student;
 	@FXML private Button submitBtn;
@@ -151,7 +151,7 @@ public class RequestBooking_StudentController {
 			((Stage)roomNo.getScene().getWindow()).setScene(homepage);
 	 	}
 	}
-	public static void serialize(Student user) throws IOException
+	public static void serialize(Student user) throws IOException //write to database
 	{
     ObjectOutputStream out = null;
     try {
@@ -162,7 +162,7 @@ public class RequestBooking_StudentController {
         out.close();
     }
 	}
-	public static void serialize(Request req) throws IOException
+	public static void serialize(Request req) throws IOException //write to database
 	{
     ObjectOutputStream out = null;
     try {
@@ -174,7 +174,7 @@ public class RequestBooking_StudentController {
     }
 	}
 
-
+//GUI interconnection
  @FXML protected void handleHomeButton(ActionEvent event) throws Exception {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/User_Student.fxml"));
 		Parent rootHomepage = fxmlLoader.load();

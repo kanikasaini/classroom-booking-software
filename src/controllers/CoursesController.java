@@ -6,7 +6,11 @@ import application.Course;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.BreakIterator;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -53,15 +57,27 @@ public class CoursesController {
     @FXML private TableColumn<Course, String> timingColumn;
     @FXML private TableColumn<Course, Boolean> addColumn;
     private ObservableList<Course> courselist = FXCollections.observableArrayList();
+    private HashMap<Integer,Course> rowToCourse=new HashMap<Integer,Course>(); 
+    private ArrayList<String> Monday = new ArrayList<String>();
+    private ArrayList<String> Tuesday = new ArrayList<String>();
+    private ArrayList<String> Wednesday = new ArrayList<String>();
+    private ArrayList<String> Thursday = new ArrayList<String>();
+    private ArrayList<String> Friday = new ArrayList<String>();
 
 
     public void initialize() throws IOException {
     	codeColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("code"));
+    	codeColumn.setSortable(false);
     	nameColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
+    	nameColumn.setSortable(false);
         prereqColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("prereq"));
+        prereqColumn.setSortable(false);
         facultyColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("faculty"));
+        facultyColumn.setSortable(false);
         postconColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("postcon"));
+        postconColumn.setSortable(false);
         timingColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("timing"));
+        timingColumn.setSortable(false);
         addColumn.setSortable(false);
         //courselist.add(new Course("CSE201","AP","IP","Vivek","Dev","Never"));
         //List<Course> parseCourseList = new ArrayList<Course>();
@@ -110,6 +126,10 @@ public class CoursesController {
 	          //tableView.getSelectionModel().select(getTableRow().getIndex());
 	          //System.out.println(tableView.getSelectionModel().select(getTableRow().getIndex()));
 	          //TablePosition tablePosition = (TablePosition) addButton.get(0);
+	        	ObservableList<Integer> p = tableView.getSelectionModel().getSelectedIndices()/*.getSelectedItems()*/;
+	        	int z = p.get(0);
+	        	//System.out.println(z);
+	        	//System.out.println(Arrays.asList(rowToCourse));
 	          
 
 	        }
@@ -192,9 +212,64 @@ public class CoursesController {
         		postconadd = postconadd + postconditions[z] + '\n' ;
 
         	courselist.add(new Course(coursen[2],coursen[1],coursen[13],coursen[3],postconadd,allTimingsNextLine));
-        	//System.out.println(allTimings);
+        	/*//System.out.println(courselist.get(j));
+        	rowToCourse.put(j,courselist.get(j));
+        	//System.out.println("timing="+courselist.get(j).getTiming());
+        	System.out.println(courselist.get(j).getTiming());
+        	//System.out.println(courselist.get(j).getTiming().contains("Tuesday"));
+        	//System.out.println(courselist.get(j).getTiming().contains("Wednesday"));
+        	//System.out.println(courselist.get(j).getTiming().contains("Thursday"));
+        	//System.out.println(courselist.get(j).getTiming().contains("Friday"));
+        	String[] days = new String[] {"Monday","Tuesday","Wednesday","Thursday","Friday"};
+        	for(int w=0;w<5;w++)
+        	{
+        		String y=days[w];
+        		String p=courselist.get(j).getTiming();
+        		if(p.contains(y))
+        		{
+        			//System.out.println("hi"+courselist.get(j).getTiming());
+        			List<String> array = new ArrayList<String>();
+        		    BreakIterator breakIterator = BreakIterator.getWordInstance();
+        		    breakIterator.setText(p);
+        		    int lastIndex = breakIterator.first();
+        		    while (BreakIterator.DONE != lastIndex) {
+        		        int firstIndex = lastIndex;
+        		        lastIndex = breakIterator.next();
+        		        if (lastIndex != BreakIterator.DONE && Character.isLetterOrDigit(p.charAt(firstIndex))) {
+        		            array.add(p.substring(firstIndex, lastIndex));
+        		        }
+        		    }
+        			System.out.println(array);
+        			for(int index=0;index<courselist.size()-1;index++)    
+        			{
+        				//System.out.println(Arrays.toString(array));
+        				System.out.println("index="+index);
+        				if(array.get(index).equals(y))
+        				{
+        					System.out.println("hi2");
+        					if(y.equals("Monday"))
+        						Monday.add(array.get(index+1));
+        					else if(y.equals("Tuesday"))
+        						Tuesday.add(array.get(index+1));
+        					else if(y.equals("Wednesday"))
+        						Wednesday.add(array.get(index+1));
+        					else if(y.equals("Thursday"))
+        						Thursday.add(array.get(index+1));
+        					else if(y.equals("Friday"))
+        						Friday.add(array.get(index+1));
+        					System.out.println("hi3");
+        				}
+        			}
+        		}
+        	}
+        	System.out.println("Monday="+Monday);
+        	//System.out.println("Tuesday="+Tuesday);
+        	//System.out.println("Wednesday="+Wednesday);
+        	//System.out.println("Thursday="+Thursday);
+        	//System.out.println("Friday="+Friday);
+        	*/
         }
-
+        
     }
 
 	@FXML private Label coursesLabel;

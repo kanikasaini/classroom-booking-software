@@ -1,5 +1,7 @@
 package application;
 
+//class to create Course object which contains all the details about courses like course code, course name, preconsitions, postconditions, timing etc
+
 public class Course {
 	private String code;
 	private String name;
@@ -7,7 +9,7 @@ public class Course {
 	private String faculty ;
 	private String postcon;
 	private String timing;
-	public Course(String code, String name, String prereq, String faculty, String postcon, String timing) {
+	public Course(String code, String name, String prereq, String faculty, String postcon, String timing) { //constructor
 		super();
 		this.code = code;
 		this.name = name;
@@ -16,7 +18,7 @@ public class Course {
 		this.postcon = postcon;
 		this.timing = timing;
 	}
-	public String getCode() {
+	public String getCode() { //getters and setters
 		return code;
 	}
 	public void setCode(String code) {
